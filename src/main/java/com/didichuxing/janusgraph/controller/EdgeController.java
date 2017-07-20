@@ -28,8 +28,7 @@ public class EdgeController {
     @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
     public @ResponseBody boolean deleteEdge(@RequestBody String startNodeId,
                                             @RequestBody String endNodeId){
-        apiDao.deleteEdge(startNodeId, endNodeId);
-        return true;
+        return apiDao.deleteEdge(startNodeId, endNodeId);
     }
 
 }

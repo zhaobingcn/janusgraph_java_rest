@@ -112,9 +112,15 @@ public class ApiDaoImpl implements ApiDao {
         return false;
     }
 
+    //删除边
     @Override
-    public boolean deleteEdge(String startNode, String endNode) {
-
+    public boolean deleteEdge(String startNodeId, String endNodeId) {
+        Vertex startNode = janusgraph.g.V().has(Label.API, "nodeId", startNodeId).next();
+        Vertex endNode = janusgraph.g.V().has(Label.API, "nodeId", endNodeId).next();
+        if(isEdgeExist(startNode, endNode)){
+            janusgraph.g.V(startNode).outE().as("edge").inV().is(endNode).select("edge").remove();
+            return true;
+        }
         return false;
     }
 

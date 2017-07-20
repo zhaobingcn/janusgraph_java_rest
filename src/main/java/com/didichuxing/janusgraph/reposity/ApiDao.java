@@ -28,6 +28,6 @@ public interface ApiDao {
 
     public boolean deleteNode(String nodeId);
 
-    public boolean deleteEdge(String startNode, String endNode);
+    public boolean deleteEdge(String startNodeId, String endNodeId);
 
 }
