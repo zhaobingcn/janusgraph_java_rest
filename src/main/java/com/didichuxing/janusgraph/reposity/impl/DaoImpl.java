@@ -1,6 +1,5 @@
 package com.didichuxing.janusgraph.reposity.impl;
 
-import com.didichuxing.janusgraph.generic.Label;
 import com.didichuxing.janusgraph.generic.RelationType;
 import com.didichuxing.janusgraph.reposity.Dao;
 import org.apache.tinkerpop.gremlin.structure.Vertex;
@@ -71,9 +70,9 @@ public class DaoImpl implements Dao {
     }
 
     @Override
-    public boolean deleteEdge(String label, String startNodeId, String endNodeId) {
-        Vertex startNode = janusgraph.g.V().has(label, "nodeId", startNodeId).next();
-        Vertex endNode = janusgraph.g.V().has(label, "nodeId", endNodeId).next();
+    public boolean deleteEdge(String startNodeId, String endNodeId) {
+        Vertex startNode = janusgraph.g.V().has("nodeId", startNodeId).next();
+        Vertex endNode = janusgraph.g.V().has("nodeId", endNodeId).next();
         if (isEdgeExist(startNode, endNode)) {
 //            写法1
 //            List<Edge> edges = janusgraph.g.V(startNode).outE().toList();

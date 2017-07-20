@@ -9,32 +9,35 @@ import java.util.Map;
  * Created by zhzy on 2017/7/21.
  */
 public interface Dao {
-//    public void addNode(Api api);
 
+    //添加边
     public void addEdge(String startNodeId, String endNodeId);
 
-//    public Api findById(Long id);
-//
-//    public Api findByNodeId(String nodeId);
-
+    //根据label查找节点
     public Vertex findVertexByNodeId(String label, String nodeId);
 
+    //根据id查找节点
     public Vertex findVertexByNodeId(String nodeId);
 
-//    public Api transferToApi(Vertex vertex);
-
+    //查看两个节点间的边是否存在
     public boolean isEdgeExist(Vertex startNode, Vertex endNode);
 
+    //查看一个节点是否存在
     public boolean isNodeExist(String label, String nodeId);
 
+    //查看一个节点是否存在边
     public boolean isNodeEdgeExist(String label, String nodeId);
 
+    //删除节点
     public boolean deleteNode(String label, String nodeId);
 
-    public boolean deleteEdge(String label, String startNodeId, String endNodeId);
+    //删除边
+    public boolean deleteEdge(String startNodeId, String endNodeId);
 
+    //修改节点数据
     public boolean updateNode(String label, String nodeId, Map<String, Object> properties);
 
+    //删除某一个标签的所有数据
     public boolean deleteAll(String label);
 
     //TODO
