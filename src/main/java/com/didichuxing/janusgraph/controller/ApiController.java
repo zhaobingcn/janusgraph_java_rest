@@ -53,6 +53,7 @@ public class ApiController {
     @RequestMapping(value = "/deleteAll", method = RequestMethod.DELETE)
     public @ResponseBody boolean deleteAll(){
         return apiDao.deleteAll(Label.API);
+
     }
 
 
