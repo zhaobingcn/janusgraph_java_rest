@@ -1,7 +1,10 @@
 package com.didichuxing.janusgraph.reposity;
 
 import com.didichuxing.janusgraph.domain.Api;
+import com.didichuxing.janusgraph.generic.Label;
 import org.apache.tinkerpop.gremlin.structure.Vertex;
+
+import java.util.Map;
 
 /**
  * Created by zhzy on 2017/7/18.
@@ -29,5 +32,12 @@ public interface ApiDao {
     public boolean deleteNode(String nodeId);
 
     public boolean deleteEdge(String startNodeId, String endNodeId);
+
+    public boolean updateNode(String nodeId, Map<String, Object> properties);
+
+    public boolean deleteAll(String label);
+
+    //TODO
+    public boolean updateEdge();
 
 }

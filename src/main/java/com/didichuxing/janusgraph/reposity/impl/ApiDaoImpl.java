@@ -4,11 +4,14 @@ import com.didichuxing.janusgraph.domain.Api;
 import com.didichuxing.janusgraph.generic.Label;
 import com.didichuxing.janusgraph.generic.RelationType;
 import com.didichuxing.janusgraph.reposity.ApiDao;
-import org.apache.tinkerpop.gremlin.structure.Edge;
 import org.apache.tinkerpop.gremlin.structure.Vertex;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
+
+import static org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.__.otherV;
+
 
 /**
  * Created by zhzy on 2017/7/18.
@@ -121,15 +124,42 @@ public class ApiDaoImpl implements ApiDao {
         Vertex startNode = janusgraph.g.V().has(Label.API, "nodeId", startNodeId).next();
         Vertex endNode = janusgraph.g.V().has(Label.API, "nodeId", endNodeId).next();
         if (isEdgeExist(startNode, endNode)) {
-            List<Edge> edges = janusgraph.g.V(startNode).outE().toList();
-            for (Edge edge : edges) {
-                if (edge.inVertex().equals(endNode)) {
-                    edge.remove();
-                    janusgraph.g.tx().commit();
-                    return true;
-                }
-            }
+//            写法1
+//            List<Edge> edges = janusgraph.g.V(startNode).outE().toList();
+//            for (Edge edge : edges) {
+//                if (edge.inVertex().equals(endNode)) {
+//                    edge.remove();
+//                    janusgraph.g.tx().commit();
+//                    return true;
+//                }
+//            }
+//            写法2
+            janusgraph.g.V(startNode).outE().where(otherV().is(endNode)).drop().iterate();
+            janusgraph.g.tx().commit();
+            return true;
         }
+        return false;
+    }
+
+    @Override
+    public boolean updateNode(String nodeId, Map<String, Object> properties) {
+        Vertex node = janusgraph.g.V().has(Label.API, "nodeId", nodeId).next();
+        for(Map.Entry<String, Object> toBeUpdatedProperty: properties.entrySet()){
+            node.property(toBeUpdatedProperty.getKey(), toBeUpdatedProperty.getValue());
+        }
+        janusgraph.g.tx().commit();
+        return true;
+    }
+
+    @Override
+    public boolean deleteAll(String label) {
+        janusgraph.g.V().hasLabel(label).drop().iterate();
+        janusgraph.g.tx().commit();
+        return false;
+    }
+
+    @Override
+    public boolean updateEdge() {
         return false;
     }
 }
