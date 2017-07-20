@@ -3,6 +3,7 @@ package com.didichuxing.janusgraph.controller;
 import com.didichuxing.janusgraph.domain.Api;
 import com.didichuxing.janusgraph.generic.Label;
 import com.didichuxing.janusgraph.reposity.ApiDao;
+import com.didichuxing.janusgraph.reposity.Dao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +20,9 @@ public class ApiController {
     @Autowired
     private ApiDao apiDao;
 
+    @Autowired
+    private Dao dao;
+
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
     public @ResponseBody boolean insertApi(@RequestBody(required = false)Api api
     ){
@@ -29,7 +33,7 @@ public class ApiController {
 
     @RequestMapping(value = "/delete/{nodeId}", method = RequestMethod.DELETE)
     public @ResponseBody boolean deleteApi(@PathVariable(value = "nodeId")String nodeId){
-        return apiDao.deleteNode(nodeId);
+        return dao.deleteNode(Label.API, nodeId);
     }
 
     @RequestMapping(value = "/find/{nodeId}", method = RequestMethod.GET)
@@ -40,19 +44,19 @@ public class ApiController {
 
     @RequestMapping(value = "/isApiEdgeExist/{nodeId}", method = RequestMethod.GET)
     public @ResponseBody boolean isNodeEdgeExist(@PathVariable(value = "nodeId") String nodeId){
-        return apiDao.isNodeEdgeExist(nodeId);
+        return dao.isNodeEdgeExist(Label.API, nodeId);
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     public @ResponseBody boolean updateNode(@RequestBody Map map){
         String nodeId = map.get("nodeId").toString();
         Map<String, Object> properties = (Map<String, Object>) map.get("properties");
-        return apiDao.updateNode(nodeId, properties);
+        return dao.updateNode(Label.API, nodeId, properties);
     }
 
     @RequestMapping(value = "/deleteAll", method = RequestMethod.DELETE)
     public @ResponseBody boolean deleteAll(){
-        return apiDao.deleteAll(Label.API);
+        return dao.deleteAll(Label.API);
 
     }
 

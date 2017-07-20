@@ -4,7 +4,9 @@ import com.didichuxing.janusgraph.domain.Api;
 import com.didichuxing.janusgraph.generic.Label;
 import com.didichuxing.janusgraph.generic.RelationType;
 import com.didichuxing.janusgraph.reposity.ApiDao;
+import com.didichuxing.janusgraph.reposity.Dao;
 import org.apache.tinkerpop.gremlin.structure.Vertex;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -22,6 +24,9 @@ public class ApiDaoImpl implements ApiDao {
 
     private JanusgraphClient janusgraph = JanusgraphClient.getJanusgraph();
 
+    @Autowired
+    private Dao dao;
+
 
     //添加Api节点
     @Override
@@ -32,24 +37,13 @@ public class ApiDaoImpl implements ApiDao {
         node.property("nodeName", api.getNodeName());
 
         for (String edgeId : api.getInComingEdge()) {
-            findVertexByNodeId(edgeId).addEdge(RelationType.Link, node);
+            dao.findVertexByNodeId(edgeId).addEdge(RelationType.Link, node);
         }
         for (String edgeId : api.getOutGoingEdge()) {
-            node.addEdge(RelationType.Link, findVertexByNodeId(edgeId));
+            node.addEdge(RelationType.Link, dao.findVertexByNodeId(edgeId));
         }
         janusgraph.graph.tx().commit();
 
-    }
-
-    //根据两个节点的nodeid添加边
-    @Override
-    public void addEdge(String startNodeId, String endNodeId) {
-        Vertex startNode = findVertexByNodeId(startNodeId);
-        Vertex endNode = findVertexByNodeId(endNodeId);
-        if (!isEdgeExist(startNode, endNode)) {
-            startNode.addEdge(RelationType.Link, endNode);
-            janusgraph.graph.tx().commit();
-        }
     }
 
 
@@ -67,11 +61,6 @@ public class ApiDaoImpl implements ApiDao {
         return transferToApi(api);
     }
 
-    //根据nodeId查找节点，返回vertex类型
-    @Override
-    public Vertex findVertexByNodeId(String nodeId) {
-        return janusgraph.g.V().has(Label.API, "nodeId", nodeId).next();
-    }
 
     //将Vertex类型的节点转换为Api
     @Override
@@ -83,83 +72,15 @@ public class ApiDaoImpl implements ApiDao {
         return api;
     }
 
-    //判断两个节点之间的边是否存在
-    @Override
-    public boolean isEdgeExist(Vertex startNode, Vertex endNode) {
-        boolean exist = false;
-        exist = janusgraph.g.V(startNode).outE().as("edge").inV().is(endNode).select("edge").hasNext();
-        return exist;
-    }
 
-    //判断节点是否存在
-    @Override
-    public boolean isNodeExist(String nodeId) {
-        boolean exist = false;
-        exist = janusgraph.g.V().has(Label.API, "nodeId", nodeId).hasNext();
-        return exist;
-    }
 
-    //判断节点是否存在边
-    @Override
-    public boolean isNodeEdgeExist(String nodeId) {
-        boolean exist = false;
-        exist = janusgraph.g.V().has(Label.API, "nodeId", nodeId).bothE().hasNext();
-        return exist;
-    }
 
-    //删除节点
-    @Override
-    public boolean deleteNode(String nodeId) {
-        if (isNodeExist(nodeId)) {
-            janusgraph.g.V().has("nodeId", nodeId).next().remove();
-            janusgraph.g.tx().commit();
-            return true;
-        }
-        return false;
-    }
 
-    //删除边
-    @Override
-    public boolean deleteEdge(String startNodeId, String endNodeId) {
-        Vertex startNode = janusgraph.g.V().has(Label.API, "nodeId", startNodeId).next();
-        Vertex endNode = janusgraph.g.V().has(Label.API, "nodeId", endNodeId).next();
-        if (isEdgeExist(startNode, endNode)) {
-//            写法1
-//            List<Edge> edges = janusgraph.g.V(startNode).outE().toList();
-//            for (Edge edge : edges) {
-//                if (edge.inVertex().equals(endNode)) {
-//                    edge.remove();
-//                    janusgraph.g.tx().commit();
-//                    return true;
-//                }
-//            }
-//            写法2
-            janusgraph.g.V(startNode).outE().where(otherV().is(endNode)).drop().iterate();
-            janusgraph.g.tx().commit();
-            return true;
-        }
-        return false;
-    }
 
-    @Override
-    public boolean updateNode(String nodeId, Map<String, Object> properties) {
-        Vertex node = janusgraph.g.V().has(Label.API, "nodeId", nodeId).next();
-        for(Map.Entry<String, Object> toBeUpdatedProperty: properties.entrySet()){
-            node.property(toBeUpdatedProperty.getKey(), toBeUpdatedProperty.getValue());
-        }
-        janusgraph.g.tx().commit();
-        return true;
-    }
 
-    @Override
-    public boolean deleteAll(String label) {
-        janusgraph.g.V().hasLabel(label).drop().iterate();
-        janusgraph.g.tx().commit();
-        return false;
-    }
 
-    @Override
-    public boolean updateEdge() {
-        return false;
-    }
+
+
+
+
 }
