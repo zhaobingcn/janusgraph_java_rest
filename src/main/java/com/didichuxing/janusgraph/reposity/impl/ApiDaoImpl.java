@@ -4,8 +4,11 @@ import com.didichuxing.janusgraph.domain.Api;
 import com.didichuxing.janusgraph.generic.Label;
 import com.didichuxing.janusgraph.generic.RelationType;
 import com.didichuxing.janusgraph.reposity.ApiDao;
+import org.apache.tinkerpop.gremlin.structure.Edge;
 import org.apache.tinkerpop.gremlin.structure.Vertex;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * Created by zhzy on 2017/7/18.
@@ -25,10 +28,10 @@ public class ApiDaoImpl implements ApiDao {
         node.property("nodeTitle", api.getNodeTitle());
         node.property("nodeName", api.getNodeName());
 
-        for(String edgeId: api.getInComingEdge()){
+        for (String edgeId : api.getInComingEdge()) {
             findVertexByNodeId(edgeId).addEdge(RelationType.Link, node);
         }
-        for(String edgeId: api.getOutGoingEdge()){
+        for (String edgeId : api.getOutGoingEdge()) {
             node.addEdge(RelationType.Link, findVertexByNodeId(edgeId));
         }
         janusgraph.graph.tx().commit();
@@ -40,7 +43,7 @@ public class ApiDaoImpl implements ApiDao {
     public void addEdge(String startNodeId, String endNodeId) {
         Vertex startNode = findVertexByNodeId(startNodeId);
         Vertex endNode = findVertexByNodeId(endNodeId);
-        if(!isEdgeExist(startNode, endNode)){
+        if (!isEdgeExist(startNode, endNode)) {
             startNode.addEdge(RelationType.Link, endNode);
             janusgraph.graph.tx().commit();
         }
@@ -95,7 +98,7 @@ public class ApiDaoImpl implements ApiDao {
 
     //判断节点是否存在边
     @Override
-    public boolean isNodeEdgeExist(String nodeId){
+    public boolean isNodeEdgeExist(String nodeId) {
         boolean exist = false;
         exist = janusgraph.g.V().has(Label.API, "nodeId", nodeId).bothE().hasNext();
         return exist;
@@ -104,7 +107,7 @@ public class ApiDaoImpl implements ApiDao {
     //删除节点
     @Override
     public boolean deleteNode(String nodeId) {
-        if(isNodeExist(nodeId)){
+        if (isNodeExist(nodeId)) {
             janusgraph.g.V().has("nodeId", nodeId).next().remove();
             janusgraph.g.tx().commit();
             return true;
@@ -117,11 +120,16 @@ public class ApiDaoImpl implements ApiDao {
     public boolean deleteEdge(String startNodeId, String endNodeId) {
         Vertex startNode = janusgraph.g.V().has(Label.API, "nodeId", startNodeId).next();
         Vertex endNode = janusgraph.g.V().has(Label.API, "nodeId", endNodeId).next();
-        if(isEdgeExist(startNode, endNode)){
-            janusgraph.g.V(startNode).outE().as("edge").inV().is(endNode).select("edge").remove();
-            return true;
+        if (isEdgeExist(startNode, endNode)) {
+            List<Edge> edges = janusgraph.g.V(startNode).outE().toList();
+            for (Edge edge : edges) {
+                if (edge.inVertex().equals(endNode)) {
+                    edge.remove();
+                    janusgraph.g.tx().commit();
+                    return true;
+                }
+            }
         }
         return false;
     }
-
 }
