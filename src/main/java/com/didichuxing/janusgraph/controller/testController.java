@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by zhzy on 2017/7/18.
@@ -32,5 +33,9 @@ public class testController {
         return janusgraphDao.insertName(api.getNodeName());
     }
 
+    @RequestMapping(value = "/query", method = RequestMethod.GET)
+    public @ResponseBody Map<String, Object> graph(){
+        return  janusgraphDao.graph();
+    }
 
 }
