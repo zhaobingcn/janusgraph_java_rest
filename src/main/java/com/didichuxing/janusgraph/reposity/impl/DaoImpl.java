@@ -105,7 +105,7 @@ public class DaoImpl implements Dao {
     public boolean deleteAll(String label) {
         janusgraph.g.V().hasLabel(label).drop().iterate();
         janusgraph.g.tx().commit();
-        return false;
+        return true;
     }
 
     @Override
