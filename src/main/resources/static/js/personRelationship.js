@@ -14,10 +14,10 @@ function loadRelationshipPersonal() {
         graph.nodes.forEach(function (node) {
             node.itemStyle = null;
             node.value = node.value;
-            node.symbolSize = Math.sqrt(node.value)*7;
+            node.symbolSize = Math.sqrt(node.value)*10;
             node.label = {
                 normal: {
-                    show: node.symbolSize > 5
+                    show: node.symbolSize > 1
                 }
             };
         });
@@ -33,7 +33,7 @@ function loadRelationshipPersonal() {
             animationEasingUpdate: 'quinticInOut',
             series : [
                 {
-                    name: '专家',
+                    name: '节点',
                     type: 'graph',
                     layout: 'force',
                    // circular: {

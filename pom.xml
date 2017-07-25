@@ -32,9 +32,15 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
       <exclusions>
+        <!--会出现冲突，排除-->
         <exclusion>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
+        </exclusion>
+        <!--排除内置tomcat-->
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-tomcat</artifactId>
         </exclusion>
       </exclusions>
       <!--<exclusions>-->
@@ -45,15 +51,43 @@
       <!--</exclusions>-->
     </dependency>
 
+
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+      <scope>provided</scope>
+    </dependency>
+
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-jetty</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+
     <dependency>
       <groupId>org.janusgraph</groupId>
       <artifactId>janusgraph-all</artifactId>
       <version>0.1.1</version>
       <exclusions>
+        <!--版本问题，排除-->
         <exclusion>
           <groupId>com.google.guava</groupId>
           <artifactId>guava</artifactId>
         </exclusion>
+        <!--会有错误，排除-->
+        <exclusion>
+          <groupId>javax.servlet</groupId>
+          <artifactId>servlet-api</artifactId>
+        </exclusion>
+        <!--会有冲突，排除-->
+        <exclusion>
+          <groupId>org.apache.spark</groupId>
+          <artifactId>spark-core_2.10</artifactId>
+        </exclusion>
+        <!--会有冲突，排除-->
         <exclusion>
           <groupId>org.slf4j</groupId>
           <artifactId>slf4j-log4j12</artifactId>
@@ -67,11 +101,11 @@
       <version>15.0</version>
     </dependency>
 
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-devtools</artifactId>
-      <optional>true</optional><!--optional=true,依赖不会传递，该项目依赖devtools；之后依赖myboot项目的项目如果想要使用devtools，需要重新引入-->
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>org.springframework.boot</groupId>-->
+      <!--<artifactId>spring-boot-devtools</artifactId>-->
+      <!--<optional>true</optional>&lt;!&ndash;optional=true,依赖不会传递，该项目依赖devtools；之后依赖myboot项目的项目如果想要使用devtools，需要重新引入&ndash;&gt;-->
+    <!--</dependency>-->
 
 
 
@@ -84,14 +118,14 @@
 
 
   <build>
-    <finalName>remote_janusgraph_server</finalName>
+    <finalName>remote_janusgraph_rest</finalName>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
-        <configuration>
-          <fork>true</fork><!-- 如果没有该项配置， 这个detools不会起作用，即应用不会restart -->
-        </configuration>
+        <!--<configuration>-->
+          <!--<fork>true</fork>&lt;!&ndash; 如果没有该项配置， 这个detools不会起作用，即应用不会restart &ndash;&gt;-->
+        <!--</configuration>-->
       </plugin>
     </plugins>
 
