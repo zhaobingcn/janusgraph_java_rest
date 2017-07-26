@@ -28,10 +28,14 @@ public class DataSourceDaoImpl implements DataSourceDao {
         node.property("nodeName", dataSource.getNodeName());
 
         for (String edgeId : dataSource.getInComingEdge()) {
-            dao.findVertexByNodeId(edgeId).addEdge(RelationType.Link, node);
+            if(dao.findVertexByNodeId(edgeId) != null) {
+                dao.findVertexByNodeId(edgeId).addEdge(RelationType.Link, node);
+            }
         }
         for (String edgeId : dataSource.getOutGoingEdge()) {
-            node.addEdge(RelationType.Link, dao.findVertexByNodeId(edgeId));
+            if(dao.findVertexByNodeId(edgeId) != null) {
+                node.addEdge(RelationType.Link, dao.findVertexByNodeId(edgeId));
+            }
         }
         janusgraph.graph.tx().commit();
     }

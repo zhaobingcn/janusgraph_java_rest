@@ -29,10 +29,14 @@ public class CanalDaoImpl implements CanalDao{
         node.property("nodeName", canal.getNodeName());
 
         for (String edgeId : canal.getInComingEdge()) {
-            dao.findVertexByNodeId(edgeId).addEdge(RelationType.Link, node);
+            if(dao.findVertexByNodeId(edgeId) != null) {
+                dao.findVertexByNodeId(edgeId).addEdge(RelationType.Link, node);
+            }
         }
         for (String edgeId : canal.getOutGoingEdge()) {
-            node.addEdge(RelationType.Link, dao.findVertexByNodeId(edgeId));
+            if(dao.findVertexByNodeId(edgeId) != null) {
+                node.addEdge(RelationType.Link, dao.findVertexByNodeId(edgeId));
+            }
         }
         janusgraph.graph.tx().commit();
     }

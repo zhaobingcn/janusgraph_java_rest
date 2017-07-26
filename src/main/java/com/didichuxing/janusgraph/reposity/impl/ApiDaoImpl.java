@@ -37,10 +37,14 @@ public class ApiDaoImpl implements ApiDao {
         node.property("nodeName", api.getNodeName());
 
         for (String edgeId : api.getInComingEdge()) {
-            dao.findVertexByNodeId(edgeId).addEdge(RelationType.Link, node);
+            if(dao.findVertexByNodeId(edgeId) != null){
+                dao.findVertexByNodeId(edgeId).addEdge(RelationType.Link, node);
+            }
         }
         for (String edgeId : api.getOutGoingEdge()) {
-            node.addEdge(RelationType.Link, dao.findVertexByNodeId(edgeId));
+            if(dao.findVertexByNodeId(edgeId) != null){
+                node.addEdge(RelationType.Link, dao.findVertexByNodeId(edgeId));
+            }
         }
         janusgraph.graph.tx().commit();
 

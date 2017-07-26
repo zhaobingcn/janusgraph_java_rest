@@ -29,10 +29,14 @@ public class JobDaoImpl implements JobDao {
         node.property("nodeName", job.getNodeName());
 
         for (String edgeId : job.getInComingEdge()) {
-            dao.findVertexByNodeId(edgeId).addEdge(RelationType.Link, node);
+            if(dao.findVertexByNodeId(edgeId) != null) {
+                dao.findVertexByNodeId(edgeId).addEdge(RelationType.Link, node);
+            }
         }
         for (String edgeId : job.getOutGoingEdge()) {
-            node.addEdge(RelationType.Link, dao.findVertexByNodeId(edgeId));
+            if(dao.findVertexByNodeId(edgeId) != null) {
+                node.addEdge(RelationType.Link, dao.findVertexByNodeId(edgeId));
+            }
         }
         janusgraph.graph.tx().commit();
     }

@@ -29,10 +29,14 @@ public class KafkaDaoImpl implements KafkaDao{
         node.property("nodeName", kafka.getNodeName());
 
         for (String edgeId : kafka.getInComingEdge()) {
-            dao.findVertexByNodeId(edgeId).addEdge(RelationType.Link, node);
+            if(dao.findVertexByNodeId(edgeId) != null) {
+                dao.findVertexByNodeId(edgeId).addEdge(RelationType.Link, node);
+            }
         }
         for (String edgeId : kafka.getOutGoingEdge()) {
-            node.addEdge(RelationType.Link, dao.findVertexByNodeId(edgeId));
+            if(dao.findVertexByNodeId(edgeId) != null) {
+                node.addEdge(RelationType.Link, dao.findVertexByNodeId(edgeId));
+            }
         }
         janusgraph.graph.tx().commit();
     }
