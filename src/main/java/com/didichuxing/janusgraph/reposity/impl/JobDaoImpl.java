@@ -49,7 +49,7 @@ public class JobDaoImpl implements JobDao {
 
     @Override
     public Job findByNodeId(String nodeId) {
-        Vertex job = janusgraph.g.V().has(Label.JOB, "nodeId", nodeId).next();
+        Vertex job = dao.findVertexByNodeId(Label.JOB, nodeId);
         return transferToJob(job);
     }
 

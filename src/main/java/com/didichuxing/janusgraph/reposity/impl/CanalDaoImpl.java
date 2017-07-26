@@ -49,7 +49,7 @@ public class CanalDaoImpl implements CanalDao{
 
     @Override
     public Canal findByNodeId(String nodeId) {
-        Vertex canal = janusgraph.g.V().has(Label.CANAL, "nodeId", nodeId).next();
+        Vertex canal = dao.findVertexByNodeId(Label.CANAL, nodeId);
         return transferToCanal(canal);
     }
 

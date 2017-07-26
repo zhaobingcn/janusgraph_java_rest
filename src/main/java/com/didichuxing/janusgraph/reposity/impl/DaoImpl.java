@@ -19,9 +19,9 @@ public class DaoImpl implements Dao {
 
     @Override
     public void addEdge(String startNodeId, String endNodeId) {
-        Vertex startNode = findVertexByNodeId(startNodeId);
-        Vertex endNode = findVertexByNodeId(endNodeId);
-        if (!isEdgeExist(startNode, endNode)) {
+        if (!isEdgeExist(startNodeId, endNodeId)) {
+            Vertex startNode = findVertexByNodeId(startNodeId);
+            Vertex endNode = findVertexByNodeId(endNodeId);
             startNode.addEdge(RelationType.Link, endNode);
             janusgraph.graph.tx().commit();
         }
@@ -42,6 +42,14 @@ public class DaoImpl implements Dao {
     public boolean isEdgeExist(Vertex startNode, Vertex endNode) {
         boolean exist = false;
         exist = janusgraph.g.V(startNode).outE().as("edge").inV().is(endNode).select("edge").hasNext();
+        return exist;
+    }
+
+    @Override
+    public boolean isEdgeExist(String startNodeId, String endNodeId) {
+        boolean exist = false;
+        String edgeId = startNodeId + endNodeId;
+        exist = janusgraph.g.E().has(RelationType.Link, "edgeId", edgeId).hasNext();
         return exist;
     }
 
@@ -71,6 +79,7 @@ public class DaoImpl implements Dao {
 
     @Override
     public boolean deleteEdge(String startNodeId, String endNodeId) {
+        /**
         Vertex startNode = janusgraph.g.V().has("nodeId", startNodeId).next();
         Vertex endNode = janusgraph.g.V().has("nodeId", endNodeId).next();
         if (isEdgeExist(startNode, endNode)) {
@@ -86,6 +95,12 @@ public class DaoImpl implements Dao {
 //            写法2
             janusgraph.g.V(startNode).outE().where(otherV().is(endNode)).drop().iterate();
             janusgraph.g.tx().commit();
+            return true;
+        }
+         **/
+        if(isEdgeExist(startNodeId, endNodeId)){
+            String edgeId = startNodeId + endNodeId;
+            janusgraph.g.E().has(RelationType.Link, "edgeId", edgeId).next().remove();
             return true;
         }
         return false;

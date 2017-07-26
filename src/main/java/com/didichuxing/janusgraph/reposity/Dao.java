@@ -19,8 +19,11 @@ public interface Dao {
     //根据id查找节点
     public Vertex findVertexByNodeId(String nodeId);
 
-    //查看两个节点间的边是否存在
+    //查看两个节点间的边是否存在,根据两个节点查询
     public boolean isEdgeExist(Vertex startNode, Vertex endNode);
+
+    //查看两个节点之间的边是否存在，根据边id查询
+    public boolean isEdgeExist(String startNodeId, String endNodeId);
 
     //查看一个节点是否存在
     public boolean isNodeExist(String label, String nodeId);

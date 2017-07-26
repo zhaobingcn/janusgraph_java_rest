@@ -36,14 +36,17 @@ public class ApiDaoImpl implements ApiDao {
         node.property("nodeTitle", api.getNodeTitle());
         node.property("nodeName", api.getNodeName());
 
-        for (String edgeId : api.getInComingEdge()) {
-            if(dao.findVertexByNodeId(edgeId) != null){
-                dao.findVertexByNodeId(edgeId).addEdge(RelationType.Link, node);
+        //TODO 需要解决添加重复边的问题
+        for (String nodeId : api.getInComingEdge()) {
+            if(dao.findVertexByNodeId(nodeId) != null){
+                dao.findVertexByNodeId(nodeId).addEdge(RelationType.Link, node)
+                        .property("edgeId", nodeId + api.getNodeId());
             }
         }
-        for (String edgeId : api.getOutGoingEdge()) {
-            if(dao.findVertexByNodeId(edgeId) != null){
-                node.addEdge(RelationType.Link, dao.findVertexByNodeId(edgeId));
+        for (String nodeId : api.getOutGoingEdge()) {
+            if(dao.findVertexByNodeId(nodeId) != null){
+                node.addEdge(RelationType.Link, dao.findVertexByNodeId(nodeId))
+                        .property("edgeId", api.getNodeId() + nodeId);
             }
         }
         janusgraph.graph.tx().commit();
@@ -61,7 +64,7 @@ public class ApiDaoImpl implements ApiDao {
     //根据node查找节点
     @Override
     public Api findByNodeId(String nodeId) {
-        Vertex api = janusgraph.g.V().has(Label.API, "nodeId", nodeId).next();
+        Vertex api = dao.findVertexByNodeId(Label.API, nodeId);
         return transferToApi(api);
     }
 

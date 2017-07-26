@@ -48,7 +48,7 @@ public class DataSourceDaoImpl implements DataSourceDao {
 
     @Override
     public DataSource findByNodeId(String nodeId) {
-        Vertex dataSource = janusgraph.g.V().has(Label.DATASOURCE, "nodeId", nodeId).next();
+        Vertex dataSource = dao.findVertexByNodeId(Label.DATASOURCE, nodeId);
         return transferToDataSource(dataSource);
     }
 

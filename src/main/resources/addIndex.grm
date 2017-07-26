@@ -1,0 +1,10 @@
+mgmt = graph.openManagement();
+nodeId = mgmt.getPropertyKey("nodeId");
+mgmt.buildIndex("byNodeIdUnique", Vertex.class).addKey(nodeId).buildCompositeIndex();
+mgmt.commit();
+
+mgmt.awaitGraphIndexStatus(graph, 'byNodeIdUnique').call()
+
+mgmt = graph.openManagement();
+mgmt.updateIndex(mgmt.getGraphIndex("byNodeIdUnique"), SchemaAction.REINDEX).get();
+mgmt.commit();

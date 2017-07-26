@@ -49,7 +49,7 @@ public class KafkaDaoImpl implements KafkaDao{
 
     @Override
     public Kafka findByNodeId(String nodeId) {
-        Vertex kafka = janusgraph.g.V().has(Label.KAFKA, "nodeId", nodeId).next();
+        Vertex kafka = dao.findVertexByNodeId(Label.KAFKA, nodeId);
         return transferToKafka(kafka);
     }
 
