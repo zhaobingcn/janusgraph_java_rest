@@ -26,7 +26,7 @@ public class ApiController {
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
     public @ResponseBody boolean insertApi(@RequestBody(required = false)Api api
     ){
-        System.out.println(api.toString());
+//        System.out.println(api.toString());
         apiDao.addNode(api);
         return true;
     }

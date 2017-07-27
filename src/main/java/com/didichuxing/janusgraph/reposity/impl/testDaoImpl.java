@@ -53,7 +53,7 @@ public class testDaoImpl implements testDao {
         for(Vertex vertex:vertexs){
             Map<String, Object> node = new HashMap<>();
             node.put("name", vertex.property("nodeId").value().toString());
-            node.put("value", vertex.property("nodeId").value().toString());
+            node.put("value", 6);
             nodes.add(node);
             nodesId.put(vertex.property("nodeId").value().toString(), i);
             i++;
