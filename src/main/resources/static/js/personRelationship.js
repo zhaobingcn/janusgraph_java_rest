@@ -6,7 +6,7 @@ function loadRelationshipPersonal() {
     var myChart = echarts.init(document.getElementById('relationship'));
     myChart.showLoading();
     $.ajax({
-        url : "/remote_janusgraph_rest/query",
+        url : "/metagraph/query",
         type: "get",
         dataType : "json",
         success : function (graph) {
