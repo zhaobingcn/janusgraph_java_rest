@@ -7,6 +7,15 @@ public class DataSource {
     private String nodeId;
     private String nodeName;
     private String nodeTitle;
+    private String type;
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     private String[] inComingEdge;
 

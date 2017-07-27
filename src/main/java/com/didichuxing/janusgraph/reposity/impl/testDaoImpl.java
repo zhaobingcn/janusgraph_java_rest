@@ -45,7 +45,6 @@ public class testDaoImpl implements testDao {
     public Map<String, Object> graph() {
         List<Edge> edges = janusgraph.g.E().toList();
         List<Vertex> vertexs = janusgraph.g.V().toList();
-        System.out.println("++++++++++++++++++" + vertexs.size());
 
         List<Map<String, Object>> nodes = new ArrayList<>();
         Map<String, Integer> nodesId = new LinkedHashMap<>();
@@ -55,7 +54,6 @@ public class testDaoImpl implements testDao {
             Map<String, Object> node = new HashMap<>();
             node.put("name", vertex.property("nodeId").value().toString());
             node.put("value", vertex.property("nodeId").value().toString());
-            System.out.println("++++++++++++++++++");
             nodes.add(node);
             nodesId.put(vertex.property("nodeId").value().toString(), i);
             i++;

@@ -26,15 +26,18 @@ public class DataSourceDaoImpl implements DataSourceDao {
         node.property("nodeId", dataSource.getNodeId());
         node.property("nodeTitle", dataSource.getNodeTitle());
         node.property("nodeName", dataSource.getNodeName());
+        node.property("type", dataSource.getType());
 
-        for (String edgeId : dataSource.getInComingEdge()) {
-            if(dao.findVertexByNodeId(edgeId) != null) {
-                dao.findVertexByNodeId(edgeId).addEdge(RelationType.Link, node);
+        for (String nodeId : dataSource.getInComingEdge()) {
+            if(dao.findVertexByNodeId(nodeId) != null) {
+                dao.findVertexByNodeId(nodeId).addEdge(RelationType.Link, node)
+                        .property("edgeId", nodeId + dataSource.getNodeId());
             }
         }
-        for (String edgeId : dataSource.getOutGoingEdge()) {
-            if(dao.findVertexByNodeId(edgeId) != null) {
-                node.addEdge(RelationType.Link, dao.findVertexByNodeId(edgeId));
+        for (String nodeId : dataSource.getOutGoingEdge()) {
+            if(dao.findVertexByNodeId(nodeId) != null) {
+                node.addEdge(RelationType.Link, dao.findVertexByNodeId(nodeId))
+                        .property("edgeId", dataSource.getNodeId() + nodeId);
             }
         }
         janusgraph.graph.tx().commit();
@@ -58,6 +61,7 @@ public class DataSourceDaoImpl implements DataSourceDao {
         dataSource.setNodeId(vertex.property("nodeId").value().toString());
         dataSource.setNodeName(vertex.property("nodeName").value().toString());
         dataSource.setNodeTitle(vertex.property("nodeTitle").value().toString());
+        dataSource.setType(vertex.property("type").value().toString());
         return dataSource;
     }
 

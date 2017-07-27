@@ -27,15 +27,18 @@ public class JobDaoImpl implements JobDao {
         node.property("nodeId", job.getNodeId());
         node.property("nodeTitle", job.getNodeTitle());
         node.property("nodeName", job.getNodeName());
+        node.property("type", job.getType());
 
-        for (String edgeId : job.getInComingEdge()) {
-            if(dao.findVertexByNodeId(edgeId) != null) {
-                dao.findVertexByNodeId(edgeId).addEdge(RelationType.Link, node);
+        for (String nodeId : job.getInComingEdge()) {
+            if(dao.findVertexByNodeId(nodeId) != null) {
+                dao.findVertexByNodeId(nodeId).addEdge(RelationType.Link, node)
+                        .property("edgeId", nodeId + job.getNodeId());
             }
         }
-        for (String edgeId : job.getOutGoingEdge()) {
-            if(dao.findVertexByNodeId(edgeId) != null) {
-                node.addEdge(RelationType.Link, dao.findVertexByNodeId(edgeId));
+        for (String nodeId : job.getOutGoingEdge()) {
+            if(dao.findVertexByNodeId(nodeId) != null) {
+                node.addEdge(RelationType.Link, dao.findVertexByNodeId(nodeId))
+                        .property("edgeId", job.getNodeId() + nodeId);
             }
         }
         janusgraph.graph.tx().commit();
@@ -59,6 +62,7 @@ public class JobDaoImpl implements JobDao {
         job.setNodeId(vertex.property("nodeId").value().toString());
         job.setNodeName(vertex.property("nodeName").value().toString());
         job.setNodeTitle(vertex.property("nodeTitle").value().toString());
+        job.setType(vertex.property("type").value().toString());
         return job;
     }
 

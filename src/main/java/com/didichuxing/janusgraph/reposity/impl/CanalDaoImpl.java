@@ -27,15 +27,18 @@ public class CanalDaoImpl implements CanalDao{
         node.property("nodeId", canal.getNodeId());
         node.property("nodeTitle", canal.getNodeTitle());
         node.property("nodeName", canal.getNodeName());
+        node.property("type", canal.getType());
 
-        for (String edgeId : canal.getInComingEdge()) {
-            if(dao.findVertexByNodeId(edgeId) != null) {
-                dao.findVertexByNodeId(edgeId).addEdge(RelationType.Link, node);
+        for (String nodeId : canal.getInComingEdge()) {
+            if(dao.findVertexByNodeId(nodeId) != null) {
+                dao.findVertexByNodeId(nodeId).addEdge(RelationType.Link, node)
+                        .property("edgeId", nodeId + canal.getNodeId());
             }
         }
-        for (String edgeId : canal.getOutGoingEdge()) {
-            if(dao.findVertexByNodeId(edgeId) != null) {
-                node.addEdge(RelationType.Link, dao.findVertexByNodeId(edgeId));
+        for (String nodeId : canal.getOutGoingEdge()) {
+            if(dao.findVertexByNodeId(nodeId) != null) {
+                node.addEdge(RelationType.Link, dao.findVertexByNodeId(nodeId))
+                        .property("edgeId", canal.getNodeId() + nodeId);
             }
         }
         janusgraph.graph.tx().commit();
@@ -59,6 +62,7 @@ public class CanalDaoImpl implements CanalDao{
         canal.setNodeId(vertex.property("nodeId").value().toString());
         canal.setNodeName(vertex.property("nodeName").value().toString());
         canal.setNodeTitle(vertex.property("nodeTitle").value().toString());
+        canal.setType(vertex.property("type").value().toString());
         return canal;
     }
 }

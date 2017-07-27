@@ -35,8 +35,9 @@ public class ApiDaoImpl implements ApiDao {
         node.property("nodeId", api.getNodeId());
         node.property("nodeTitle", api.getNodeTitle());
         node.property("nodeName", api.getNodeName());
+        node.property("type", api.getType());
 
-        //TODO 需要解决添加重复边的问题
+        //因为添加点还未存在，所以不会出现重复边的问题
         for (String nodeId : api.getInComingEdge()) {
             if(dao.findVertexByNodeId(nodeId) != null){
                 dao.findVertexByNodeId(nodeId).addEdge(RelationType.Link, node)
@@ -76,6 +77,7 @@ public class ApiDaoImpl implements ApiDao {
         api.setNodeId(vertex.property("nodeId").value().toString());
         api.setNodeName(vertex.property("nodeName").value().toString());
         api.setNodeTitle(vertex.property("nodeTitle").value().toString());
+        api.setType(vertex.property("type").value().toString());
         return api;
     }
 
