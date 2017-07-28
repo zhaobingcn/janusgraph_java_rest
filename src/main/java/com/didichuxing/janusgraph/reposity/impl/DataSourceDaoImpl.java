@@ -51,7 +51,7 @@ public class DataSourceDaoImpl implements DataSourceDao {
 
     @Override
     public DataSource findByNodeId(String nodeId) {
-        Vertex dataSource = dao.findVertexByNodeId(Label.DATASOURCE, nodeId);
+        Vertex dataSource = dao.findVertexByNodeId(nodeId);
         return transferToDataSource(dataSource);
     }
 

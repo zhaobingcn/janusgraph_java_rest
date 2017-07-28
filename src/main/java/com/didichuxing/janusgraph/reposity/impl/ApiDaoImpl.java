@@ -65,7 +65,7 @@ public class ApiDaoImpl implements ApiDao {
     //根据node查找节点
     @Override
     public Api findByNodeId(String nodeId) {
-        Vertex api = dao.findVertexByNodeId(Label.API, nodeId);
+        Vertex api = dao.findVertexByNodeId(nodeId);
         return transferToApi(api);
     }
 

@@ -1,5 +1,6 @@
 package com.didichuxing.janusgraph.reposity.impl;
 
+import com.didichuxing.janusgraph.generic.Label;
 import com.didichuxing.janusgraph.generic.RelationType;
 import com.didichuxing.janusgraph.reposity.Dao;
 import org.apache.tinkerpop.gremlin.structure.Vertex;
@@ -17,6 +18,32 @@ public class DaoImpl implements Dao {
 
     private JanusgraphClient janusgraph = JanusgraphClient.getJanusgraph();
 
+
+    @Override
+    public void addNode(String label, Map<String, Object> nodeDetail) {
+        Vertex node = janusgraph.graph.addVertex(label);
+        for(Map.Entry<String, Object> property: nodeDetail.entrySet()){
+            if(property.getKey().toString() != "inComingEdge" &&
+                    property.getKey().toString() != "outCommingEdge"){
+                node.property(property.getKey(), property.getValue());
+            }
+        }
+        //因为添加点还未存在，所以不会出现重复边的问题
+        for (String nodeId : (String[])nodeDetail.get("inComingEdge")) {
+            if(findVertexByNodeId(nodeId) != null){
+                findVertexByNodeId(nodeId).addEdge(RelationType.Link, node)
+                        .property("edgeId", nodeId + nodeDetail.get("nodeId"));
+            }
+        }
+        for (String nodeId : (String[])nodeDetail.get("outGoingEdge")) {
+            if(findVertexByNodeId(nodeId) != null){
+                node.addEdge(RelationType.Link, findVertexByNodeId(nodeId))
+                        .property("edgeId", nodeDetail.get("nodeId") + nodeId);
+            }
+        }
+        janusgraph.graph.tx().commit();
+    }
+
     @Override
     public void addEdge(String startNodeId, String endNodeId) {
         if (!isEdgeExist(startNodeId, endNodeId)) {
@@ -27,10 +54,14 @@ public class DaoImpl implements Dao {
         }
     }
 
+    @Override
+    public void addEdge(String startLabel, String startNodeId, String endLabel, String endNodeId) {
+    }
+
 
     @Override
-    public Vertex findVertexByNodeId(String label, String nodeId) {
-        return janusgraph.g.V().has(label, "nodeId", nodeId).next();
+    public Map<String, Object> findValueMapByNodeId(String label, String nodeId) {
+        return janusgraph.g.V().has(label, "nodeId", nodeId).valueMap().next();
     }
 
     @Override

@@ -52,7 +52,7 @@ public class CanalDaoImpl implements CanalDao{
 
     @Override
     public Canal findByNodeId(String nodeId) {
-        Vertex canal = dao.findVertexByNodeId(Label.CANAL, nodeId);
+        Vertex canal = dao.findVertexByNodeId(nodeId);
         return transferToCanal(canal);
     }
 

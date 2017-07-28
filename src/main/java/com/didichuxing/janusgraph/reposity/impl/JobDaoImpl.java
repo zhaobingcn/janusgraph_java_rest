@@ -52,7 +52,7 @@ public class JobDaoImpl implements JobDao {
 
     @Override
     public Job findByNodeId(String nodeId) {
-        Vertex job = dao.findVertexByNodeId(Label.JOB, nodeId);
+        Vertex job = dao.findVertexByNodeId(nodeId);
         return transferToJob(job);
     }
 

@@ -52,7 +52,7 @@ public class KafkaDaoImpl implements KafkaDao{
 
     @Override
     public Kafka findByNodeId(String nodeId) {
-        Vertex kafka = dao.findVertexByNodeId(Label.KAFKA, nodeId);
+        Vertex kafka = dao.findVertexByNodeId(nodeId);
         return transferToKafka(kafka);
     }
 
