@@ -14,7 +14,6 @@ import java.util.Map;
 @RequestMapping("/{label}")
 public class OLTPController {
 
-
     @Autowired
     private Dao dao;
 
@@ -34,13 +33,13 @@ public class OLTPController {
 
     @RequestMapping(value = "/find/{nodeId}", method = RequestMethod.GET)
     public @ResponseBody Map<String, Object> find(@PathVariable(value = "label") String label,
-                                  @PathVariable(value = "nodeId") String nodeId){
+                                                  @PathVariable(value = "nodeId") String nodeId){
         System.out.println(nodeId);
         Map<String, Object> nodeMap = dao.findValueMapByNodeId(label, nodeId);
         return nodeMap;
     }
 
-    @RequestMapping(value = "/isEdgeExist/{nodeId}", method = RequestMethod.GET)
+    @RequestMapping(value = "/isNodeEdgeExist/{nodeId}", method = RequestMethod.GET)
     public @ResponseBody boolean isNodeEdgeExist(@PathVariable(value = "label")String label,
                                                  @PathVariable(value = "nodeId") String nodeId){
         return dao.isNodeEdgeExist(label, nodeId);

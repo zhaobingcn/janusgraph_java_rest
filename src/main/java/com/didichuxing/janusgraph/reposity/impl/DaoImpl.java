@@ -6,6 +6,7 @@ import com.didichuxing.janusgraph.reposity.Dao;
 import org.apache.tinkerpop.gremlin.structure.Vertex;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 import static org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.__.otherV;
@@ -24,18 +25,18 @@ public class DaoImpl implements Dao {
         Vertex node = janusgraph.graph.addVertex(label);
         for(Map.Entry<String, Object> property: nodeDetail.entrySet()){
             if(property.getKey().toString() != "inComingEdge" &&
-                    property.getKey().toString() != "outCommingEdge"){
+                    property.getKey().toString() != "outGoingEdge"){
                 node.property(property.getKey(), property.getValue());
             }
         }
         //因为添加点还未存在，所以不会出现重复边的问题
-        for (String nodeId : (String[])nodeDetail.get("inComingEdge")) {
+        for (String nodeId : (ArrayList<String>)nodeDetail.get("inComingEdge")) {
             if(findVertexByNodeId(nodeId) != null){
                 findVertexByNodeId(nodeId).addEdge(RelationType.Link, node)
                         .property("edgeId", nodeId + nodeDetail.get("nodeId"));
             }
         }
-        for (String nodeId : (String[])nodeDetail.get("outGoingEdge")) {
+        for (String nodeId : (ArrayList<String>)nodeDetail.get("outGoingEdge")) {
             if(findVertexByNodeId(nodeId) != null){
                 node.addEdge(RelationType.Link, findVertexByNodeId(nodeId))
                         .property("edgeId", nodeDetail.get("nodeId") + nodeId);
@@ -49,7 +50,7 @@ public class DaoImpl implements Dao {
         if (!isEdgeExist(startNodeId, endNodeId)) {
             Vertex startNode = findVertexByNodeId(startNodeId);
             Vertex endNode = findVertexByNodeId(endNodeId);
-            startNode.addEdge(RelationType.Link, endNode);
+            startNode.addEdge(RelationType.Link, endNode).property("edgeId", startNodeId + endNodeId);
             janusgraph.graph.tx().commit();
         }
     }
@@ -68,6 +69,7 @@ public class DaoImpl implements Dao {
     public Vertex findVertexByNodeId(String nodeId) {
         return janusgraph.g.V().has("nodeId", nodeId).next();
     }
+
 
     @Override
     public boolean isEdgeExist(Vertex startNode, Vertex endNode) {
@@ -132,6 +134,7 @@ public class DaoImpl implements Dao {
         if(isEdgeExist(startNodeId, endNodeId)){
             String edgeId = startNodeId + endNodeId;
             janusgraph.g.E().has(RelationType.Link, "edgeId", edgeId).next().remove();
+            janusgraph.g.tx().commit();
             return true;
         }
         return false;
