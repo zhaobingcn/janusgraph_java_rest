@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
-import static org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.__.otherV;
+import static org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.__.*;
 
 /**
  * Created by zhzy on 2017/7/21.
@@ -174,21 +174,24 @@ public class DaoImpl implements Dao {
     }
 
     @Override
+    public List<Vertex> findNeighborsNodesById(long id) {
+        Vertex node = janusgraph.g.V().hasId(id).next();
+        List<Vertex> nodes = janusgraph.g.V().hasId(id).both().toList();
+        nodes.add(node);
+        return nodes;
+    }
+
+    @Override
+    public List<Edge> findNeighborsEdgesById(long id) {
+        List<Edge> edges = janusgraph.g.V().hasId(id).bothE().toList();
+        return edges;
+    }
+
+    @Override
     public List<Vertex> findAllNodes() {
         List<Vertex> nodes = janusgraph.g.V().toList();
         return nodes;
     }
-
-//    @Override
-//    public List<Vertex> findNeighborsNodesById(long id) {
-//        List<Vertex> nodes = janusgraph.g.V().where(id().is(id)).next();
-//        return nodes;
-//    }
-
-//    @Override
-//    public List<Edge> findNeighborsEdgesById(long id) {
-//        return null;
-//    }
 
     @Override
     public Map<String, Object> transferVertexToMap(Vertex vertex) {

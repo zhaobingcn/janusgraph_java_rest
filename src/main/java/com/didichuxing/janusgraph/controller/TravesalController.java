@@ -25,8 +25,14 @@ public class TravesalController {
 //
 //    }
 
-    @RequestMapping(value = "findAllNodes", method = RequestMethod.GET)
+    @RequestMapping(value = "/findAllNodes", method = RequestMethod.GET)
     public @ResponseBody Map<String, Object> findAllNodes(){
         return traversalService.generateNodesGraph();
+    }
+
+    @RequestMapping(value = "/findSubgraph/{id}/{depth}", method = RequestMethod.GET)
+    public @ResponseBody Map<String, Object> findSubgraph(@PathVariable(value = "id")long id,
+                                                          @PathVariable(value = "depth")int depth){
+        return traversalService.generateGraph(id);
     }
 }

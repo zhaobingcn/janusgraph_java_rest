@@ -3,14 +3,12 @@ package com.didichuxing.janusgraph.service.impl;
 import com.didichuxing.janusgraph.reposity.Dao;
 import com.didichuxing.janusgraph.service.TraversalService;
 import org.apache.commons.collections.map.HashedMap;
+import org.apache.tinkerpop.gremlin.structure.Edge;
 import org.apache.tinkerpop.gremlin.structure.Vertex;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by zhzy on 2017/8/3.
@@ -34,7 +32,30 @@ public class TraversalServiceImpl implements TraversalService {
     }
 
     @Override
-    public Map<String, Object> generateGraph() {
-        return null;
+    public Map<String, Object> generateGraph(long id) {
+        List<Vertex> vertices = dao.findNeighborsNodesById(id);
+        List<Edge> edges = dao.findNeighborsEdgesById(id);
+
+        List<Map<String, Object>> nodes = new ArrayList<>();
+        Map<String, Integer> nodesId = new LinkedHashMap<>();
+        List<Map<String, Object>> links = new ArrayList<>();
+
+        int i = 0;
+        for(Vertex vertex: vertices){
+            nodes.add(dao.transferVertexToMap(vertex));
+            nodesId.put(vertex.property("nodeId").value().toString(), i);
+            i++;
+        }
+        for(Edge edge: edges){
+            Map<String, Object> link = new HashMap<>();
+            link.put("source", nodesId.get(edge.outVertex().property("nodeId").value().toString()));
+            link.put("target", nodesId.get(edge.inVertex().property("nodeId").value().toString()));
+            links.add(link);
+        }
+        Map<String, Object> result = new HashMap<>();
+        result.put("nodes", nodes);
+        result.put("links", links);
+
+        return result;
     }
 }

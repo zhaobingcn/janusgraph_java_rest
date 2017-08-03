@@ -59,10 +59,10 @@ public interface Dao {
     public List<Vertex> findNodesByTypeAndVersion(String label, Map<String, Object> properties);
 
     //查询一个节点的周围所有节点及自身
-//    public List<Vertex> findNeighborsNodesById(long id);
+    public List<Vertex> findNeighborsNodesById(long id);
 
     //查询一个节点周围的所有关系
-//    public List<Edge> findNeighborsEdgesById(long id);
+    public List<Edge> findNeighborsEdgesById(long id);
 
     //返回所有的节点
     public List<Vertex> findAllNodes();
