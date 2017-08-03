@@ -19,7 +19,7 @@ public class JanusgraphClient {
             graph = JanusGraphFactory.build().set("storage.backend", "hbase")
                     .set("storage.hostname", "127.0.0.1")
 //                    .set("storage.directory", "db/berkeleyje")
-                    .set("storage.tablename", "testgraph")
+//                    .set("storage.tablename", "testgraph")
                     .open();
             g = graph.traversal();
         }

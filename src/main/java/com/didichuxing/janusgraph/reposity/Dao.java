@@ -1,8 +1,11 @@
 package com.didichuxing.janusgraph.reposity;
 
 import com.didichuxing.janusgraph.domain.Api;
+import org.apache.tinkerpop.gremlin.structure.Edge;
 import org.apache.tinkerpop.gremlin.structure.Vertex;
 
+import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -48,6 +51,24 @@ public interface Dao {
 
     //删除某一个标签的所有数据
     public boolean deleteAll(String label);
+
+    //根据属性查询
+    public List<Vertex> findNodesByLabelAndProperty(String label, String propertyKey, String propertyValue);
+
+    //根据联合属性查询
+    public List<Vertex> findNodesByTypeAndVersion(String label, Map<String, Object> properties);
+
+    //查询一个节点的周围所有节点及自身
+//    public List<Vertex> findNeighborsNodesById(long id);
+
+    //查询一个节点周围的所有关系
+//    public List<Edge> findNeighborsEdgesById(long id);
+
+    //返回所有的节点
+    public List<Vertex> findAllNodes();
+
+    //将Vertex转化成Map
+    public Map<String, Object> transferVertexToMap(Vertex vertex);
 
     //TODO
     public boolean updateEdge();

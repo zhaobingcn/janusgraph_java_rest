@@ -1,10 +1,14 @@
 package com.didichuxing.janusgraph.controller;
 
 import com.didichuxing.janusgraph.reposity.Dao;
+import org.apache.tinkerpop.gremlin.structure.Vertex;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -56,7 +60,29 @@ public class OLTPController {
     @RequestMapping(value = "/deleteAll", method = RequestMethod.DELETE)
     public @ResponseBody boolean deleteAll(@PathVariable(value = "label")String label){
         return dao.deleteAll(label);
+    }
 
+    @RequestMapping(value = "/findByProperty/{propertyKey}/{propertyValue}", method = RequestMethod.GET)
+    public @ResponseBody List<Map<String, Object>> findByProperty(@PathVariable(value = "label")String label,
+                                                     @PathVariable(value = "propertyKey")String propertyKey,
+                                                     @PathVariable(value = "propertyValue")String propertyValue){
+        List<Vertex> nodes = dao.findNodesByLabelAndProperty(label, propertyKey, propertyValue);
+        List<Map<String, Object>> displayNodes = new ArrayList<>();
+        for(Vertex displayNode:nodes){
+            displayNodes.add(dao.transferVertexToMap(displayNode));
+        }
+        return displayNodes;
+    }
+
+    @RequestMapping(value = "/findByProperties", method = RequestMethod.GET)
+    public @ResponseBody List<Map<String, Object>> findByProperties(@PathVariable(value = "label")String label,
+                                                    @RequestBody Map<String, Object> map){
+        List<Vertex> nodes = dao.findNodesByTypeAndVersion(label, map);
+        List<Map<String, Object>> displayNodes = new ArrayList<>();
+        for(Vertex displayNode:nodes){
+            displayNodes.add(dao.transferVertexToMap(displayNode));
+        }
+        return displayNodes;
     }
 
 }
