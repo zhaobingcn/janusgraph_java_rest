@@ -1,18 +1,14 @@
 package com.didichuxing.janusgraph.reposity.impl;
 
-import com.didichuxing.janusgraph.generic.Label;
 import com.didichuxing.janusgraph.generic.RelationType;
 import com.didichuxing.janusgraph.reposity.Dao;
-import org.apache.commons.collections.map.HashedMap;
 import org.apache.tinkerpop.gremlin.structure.Edge;
 import org.apache.tinkerpop.gremlin.structure.Property;
 import org.apache.tinkerpop.gremlin.structure.Vertex;
-import org.apache.tinkerpop.gremlin.structure.VertexProperty;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
-import static org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.__.*;
 
 /**
  * Created by zhzy on 2017/7/21.
@@ -70,7 +66,10 @@ public class DaoImpl implements Dao {
 
     @Override
     public Vertex findVertexByNodeId(String nodeId) {
-        return janusgraph.g.V().has("nodeId", nodeId).next();
+        if(janusgraph.g.V().has("nodeId", nodeId).hasNext()){
+            return janusgraph.g.V().has("nodeId", nodeId).next();
+        }
+        return null;
     }
 
 

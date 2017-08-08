@@ -1,8 +1,14 @@
 package com.didichuxing.janusgraph.controller;
 
+import com.didichuxing.janusgraph.domain.ClientInfo;
+import com.didichuxing.janusgraph.domain.Status;
 import com.didichuxing.janusgraph.reposity.Dao;
+import org.apache.commons.collections.MapUtils;
+import org.apache.commons.collections.map.HashedMap;
 import org.apache.tinkerpop.gremlin.structure.Vertex;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -38,15 +44,20 @@ public class OLTPController {
     @RequestMapping(value = "/find/{nodeId}", method = RequestMethod.GET)
     public @ResponseBody Map<String, Object> find(@PathVariable(value = "label") String label,
                                                   @PathVariable(value = "nodeId") String nodeId){
-        System.out.println(nodeId);
+
         Map<String, Object> nodeMap = dao.findValueMapByNodeId(label, nodeId);
         return nodeMap;
     }
 
     @RequestMapping(value = "/isNodeEdgeExist/{nodeId}", method = RequestMethod.GET)
-    public @ResponseBody boolean isNodeEdgeExist(@PathVariable(value = "label")String label,
-                                                 @PathVariable(value = "nodeId") String nodeId){
-        return dao.isNodeEdgeExist(label, nodeId);
+    public ResponseEntity<ClientInfo>  isNodeEdgeExist(@PathVariable(value = "label")String label,
+                                                       @PathVariable(value = "nodeId") String nodeId){
+        ClientInfo clientInfo = new ClientInfo();
+        Map<String, Object> result = new HashMap<>();
+        result.put("state", dao.isNodeEdgeExist(label, nodeId));
+        clientInfo.setData(result);
+        clientInfo.setStatus(new Status("200", "执行成功查找"));
+        return ResponseEntity.status(HttpStatus.OK).body(clientInfo);
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)

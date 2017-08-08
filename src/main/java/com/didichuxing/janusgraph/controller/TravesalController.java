@@ -1,7 +1,10 @@
 package com.didichuxing.janusgraph.controller;
 
+import com.didichuxing.janusgraph.domain.ClientInfo;
+import com.didichuxing.janusgraph.domain.Status;
 import com.didichuxing.janusgraph.service.TraversalService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,8 +29,11 @@ public class TravesalController {
 //    }
 
     @RequestMapping(value = "/findAllNodes", method = RequestMethod.GET)
-    public @ResponseBody Map<String, Object> findAllNodes(){
-        return traversalService.generateNodesGraph();
+    public ResponseEntity<ClientInfo> findAllNodes(){
+        ClientInfo clientInfo = new ClientInfo();
+        clientInfo.setStatus(new Status("200", "查找成功"));
+        clientInfo.setData(traversalService.generateNodesGraph());
+        return ResponseEntity.ok(clientInfo);
     }
 
     @RequestMapping(value = "/findSubgraph/{id}/{depth}", method = RequestMethod.GET)
