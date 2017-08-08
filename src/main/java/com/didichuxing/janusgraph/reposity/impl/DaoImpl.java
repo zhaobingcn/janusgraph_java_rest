@@ -20,7 +20,7 @@ public class DaoImpl implements Dao {
 
 
     @Override
-    public void addNode(String label, Map<String, Object> nodeDetail) {
+    public boolean addNode(String label, Map<String, Object> nodeDetail) {
         Vertex node = janusgraph.graph.addVertex(label);
         for(Map.Entry<String, Object> property: nodeDetail.entrySet()){
             if(property.getKey().toString() != "inComingEdge" &&
@@ -42,26 +42,33 @@ public class DaoImpl implements Dao {
             }
         }
         janusgraph.graph.tx().commit();
+        return true;
     }
 
     @Override
-    public void addEdge(String startNodeId, String endNodeId) {
+    public boolean addEdge(String startNodeId, String endNodeId) {
         if (!isEdgeExist(startNodeId, endNodeId)) {
             Vertex startNode = findVertexByNodeId(startNodeId);
             Vertex endNode = findVertexByNodeId(endNodeId);
             startNode.addEdge(RelationType.Link, endNode).property("edgeId", startNodeId + endNodeId);
             janusgraph.graph.tx().commit();
+            return true;
         }
+        return false;
     }
 
     @Override
-    public void addEdge(String startLabel, String startNodeId, String endLabel, String endNodeId) {
+    public boolean addEdge(String startLabel, String startNodeId, String endLabel, String endNodeId) {
+        return false;
     }
 
 
     @Override
     public Map<String, Object> findValueMapByNodeId(String label, String nodeId) {
-        return janusgraph.g.V().has(label, "nodeId", nodeId).valueMap().next();
+        if(janusgraph.g.V().has(label, "nodeId", nodeId).hasNext()){
+            return transferVertexToMap(janusgraph.g.V().has(label, "nodeId", nodeId).next());
+        }
+        return null;
     }
 
     @Override
@@ -174,9 +181,12 @@ public class DaoImpl implements Dao {
 
     @Override
     public List<Vertex> findNeighborsNodesById(long id) {
-        Vertex node = janusgraph.g.V().hasId(id).next();
-        List<Vertex> nodes = janusgraph.g.V().hasId(id).both().toList();
-        nodes.add(node);
+        List<Vertex> nodes = null;
+        if(janusgraph.g.V().hasId(id).hasNext()){
+            Vertex node = janusgraph.g.V().hasId(id).next();
+            nodes = janusgraph.g.V().hasId(id).both().toList();
+            nodes.add(node);
+        }
         return nodes;
     }
 

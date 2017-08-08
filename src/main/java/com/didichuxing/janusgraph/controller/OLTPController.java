@@ -28,25 +28,37 @@ public class OLTPController {
     private Dao dao;
 
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
-    public @ResponseBody boolean insert(@PathVariable(value = "label")String label,
+    public ResponseEntity<ClientInfo> insert(@PathVariable(value = "label")String label,
                                         @RequestBody(required = false)Map<String, Object> map
     ){
-        dao.addNode(label, map);
-        return true;
+        Map<String, Object> result = new HashMap<>();
+        result.put("state", dao.addNode(label, map));
+        ClientInfo clientInfo = new ClientInfo();
+        clientInfo.setStatus(new Status("200", "添加成功"));
+        clientInfo.setData(result);
+        return ResponseEntity.ok(clientInfo);
     }
 
     @RequestMapping(value = "/delete/{nodeId}", method = RequestMethod.DELETE)
-    public @ResponseBody boolean delete(@PathVariable(value = "label")String label,
+    public ResponseEntity<ClientInfo> delete(@PathVariable(value = "label")String label,
                                         @PathVariable(value = "nodeId")String nodeId){
-        return dao.deleteNode(label, nodeId);
+        Map<String, Object> result = new HashMap<>();
+        result.put("state", dao.deleteNode(label, nodeId));
+        ClientInfo clientInfo = new ClientInfo();
+        clientInfo.setStatus(new Status("200", "删除成功"));
+        clientInfo.setData(result);
+        return ResponseEntity.ok(clientInfo);
     }
 
     @RequestMapping(value = "/find/{nodeId}", method = RequestMethod.GET)
-    public @ResponseBody Map<String, Object> find(@PathVariable(value = "label") String label,
+    public ResponseEntity<ClientInfo> find(@PathVariable(value = "label") String label,
                                                   @PathVariable(value = "nodeId") String nodeId){
 
         Map<String, Object> nodeMap = dao.findValueMapByNodeId(label, nodeId);
-        return nodeMap;
+        ClientInfo clientInfo = new ClientInfo();
+        clientInfo.setStatus(new Status("200", "查找成功"));
+        clientInfo.setData(nodeMap);
+        return ResponseEntity.ok(clientInfo);
     }
 
     @RequestMapping(value = "/isNodeEdgeExist/{nodeId}", method = RequestMethod.GET)
@@ -56,25 +68,37 @@ public class OLTPController {
         Map<String, Object> result = new HashMap<>();
         result.put("state", dao.isNodeEdgeExist(label, nodeId));
         clientInfo.setData(result);
-        clientInfo.setStatus(new Status("200", "执行成功查找"));
+        clientInfo.setStatus(new Status("200", "执行成功"));
         return ResponseEntity.status(HttpStatus.OK).body(clientInfo);
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)
-    public @ResponseBody boolean updateNode(@PathVariable(value = "label")String label,
+    public ResponseEntity<ClientInfo> updateNode(@PathVariable(value = "label")String label,
                                             @RequestBody Map map){
         String nodeId = map.get("nodeId").toString();
         Map<String, Object> properties = (Map<String, Object>) map.get("properties");
-        return dao.updateNode(label, nodeId, properties);
+
+        ClientInfo clientInfo = new ClientInfo();
+        Map<String, Object> result = new HashMap<>();
+        result.put("state", dao.updateNode(label, nodeId, properties));
+        clientInfo.setData(result);
+        clientInfo.setStatus(new Status("200", "更新成功"));
+        return ResponseEntity.ok(clientInfo);
     }
 
     @RequestMapping(value = "/deleteAll", method = RequestMethod.DELETE)
-    public @ResponseBody boolean deleteAll(@PathVariable(value = "label")String label){
-        return dao.deleteAll(label);
+    public ResponseEntity<ClientInfo> deleteAll(@PathVariable(value = "label")String label){
+
+        ClientInfo clientInfo = new ClientInfo();
+        Map<String, Object> result = new HashMap<>();
+        result.put("state", dao.deleteAll(label));
+        clientInfo.setData(result);
+        clientInfo.setStatus(new Status("200", "删除成功"));
+        return ResponseEntity.ok(clientInfo);
     }
 
     @RequestMapping(value = "/findByProperty/{propertyKey}/{propertyValue}", method = RequestMethod.GET)
-    public @ResponseBody List<Map<String, Object>> findByProperty(@PathVariable(value = "label")String label,
+    public ResponseEntity<ClientInfo> findByProperty(@PathVariable(value = "label")String label,
                                                      @PathVariable(value = "propertyKey")String propertyKey,
                                                      @PathVariable(value = "propertyValue")String propertyValue){
         List<Vertex> nodes = dao.findNodesByLabelAndProperty(label, propertyKey, propertyValue);
@@ -82,18 +106,24 @@ public class OLTPController {
         for(Vertex displayNode:nodes){
             displayNodes.add(dao.transferVertexToMap(displayNode));
         }
-        return displayNodes;
+        ClientInfo clientInfo = new ClientInfo();
+        clientInfo.setData(displayNodes);
+        clientInfo.setStatus(new Status("200", "查找成功"));
+        return ResponseEntity.ok(clientInfo);
     }
 
     @RequestMapping(value = "/findByProperties", method = RequestMethod.GET)
-    public @ResponseBody List<Map<String, Object>> findByProperties(@PathVariable(value = "label")String label,
+    public ResponseEntity<ClientInfo> findByProperties(@PathVariable(value = "label")String label,
                                                     @RequestBody Map<String, Object> map){
         List<Vertex> nodes = dao.findNodesByTypeAndVersion(label, map);
         List<Map<String, Object>> displayNodes = new ArrayList<>();
         for(Vertex displayNode:nodes){
             displayNodes.add(dao.transferVertexToMap(displayNode));
         }
-        return displayNodes;
+        ClientInfo clientInfo = new ClientInfo();
+        clientInfo.setData(displayNodes);
+        clientInfo.setStatus(new Status("200", "查找成功"));
+        return ResponseEntity.ok(clientInfo);
     }
 
 }

@@ -43,6 +43,7 @@ public class TraversalServiceImpl implements TraversalService {
         int i = 0;
         for(Vertex vertex: vertices){
             nodes.add(dao.transferVertexToMap(vertex));
+            System.out.println("++++++++++++" + vertex.property("nodeId").value().toString());
             nodesId.put(vertex.property("nodeId").value().toString(), i);
             i++;
         }

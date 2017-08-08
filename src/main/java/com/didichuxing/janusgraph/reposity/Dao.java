@@ -14,13 +14,13 @@ import java.util.Map;
 public interface Dao {
 
     //添加节点
-    public void addNode(String label, Map<String, Object> node);
+    public boolean addNode(String label, Map<String, Object> node);
 
     //添加边
-    public void addEdge(String startNodeId, String endNodeId);
+    public boolean addEdge(String startNodeId, String endNodeId);
 
     //添加边，有标签
-    public void addEdge(String startLabel, String startNodeId, String endLabel, String endNodeId);
+    public boolean addEdge(String startLabel, String startNodeId, String endLabel, String endNodeId);
 
     //根据label查找节点
     public Map<String, Object> findValueMapByNodeId(String label, String nodeId);

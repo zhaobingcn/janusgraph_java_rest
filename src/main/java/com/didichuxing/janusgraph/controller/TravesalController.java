@@ -23,11 +23,6 @@ public class TravesalController {
     @Autowired
     private TraversalService traversalService;
 
-//    @RequestMapping(value = "/findNeighbors/{id}")
-//    public Map<String, Object> findNeighbors(@PathVariable(value = "id")long id){
-//
-//    }
-
     @RequestMapping(value = "/findAllNodes", method = RequestMethod.GET)
     public ResponseEntity<ClientInfo> findAllNodes(){
         ClientInfo clientInfo = new ClientInfo();
@@ -37,8 +32,11 @@ public class TravesalController {
     }
 
     @RequestMapping(value = "/findSubgraph/{id}/{depth}", method = RequestMethod.GET)
-    public @ResponseBody Map<String, Object> findSubgraph(@PathVariable(value = "id")long id,
+    public ResponseEntity<ClientInfo> findSubgraph(@PathVariable(value = "id")long id,
                                                           @PathVariable(value = "depth")int depth){
-        return traversalService.generateGraph(id);
+        ClientInfo clientInfo = new ClientInfo();
+        clientInfo.setStatus(new Status("200", "查找成功"));
+        clientInfo.setData(traversalService.generateGraph(id));
+        return ResponseEntity.ok(clientInfo);
     }
 }
