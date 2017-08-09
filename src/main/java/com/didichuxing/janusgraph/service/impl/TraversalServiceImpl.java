@@ -33,7 +33,14 @@ public class TraversalServiceImpl implements TraversalService {
 
     @Override
     public Map<String, Object> generateGraph(long id) {
+
+        Map<String, Object> result = new HashMap<>();
+        result.put("nodes", new String[]{});
+        result.put("links", new String[]{});
         List<Vertex> vertices = dao.findNeighborsNodesById(id);
+        if(vertices.isEmpty()){
+            return result;
+        }
         List<Edge> edges = dao.findNeighborsEdgesById(id);
 
         List<Map<String, Object>> nodes = new ArrayList<>();
@@ -53,7 +60,7 @@ public class TraversalServiceImpl implements TraversalService {
             link.put("target", nodesId.get(edge.inVertex().property("nodeId").value().toString()));
             links.add(link);
         }
-        Map<String, Object> result = new HashMap<>();
+
         result.put("nodes", nodes);
         result.put("links", links);
 

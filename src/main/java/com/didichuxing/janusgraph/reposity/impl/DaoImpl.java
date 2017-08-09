@@ -68,7 +68,7 @@ public class DaoImpl implements Dao {
         if(janusgraph.g.V().has(label, "nodeId", nodeId).hasNext()){
             return transferVertexToMap(janusgraph.g.V().has(label, "nodeId", nodeId).next());
         }
-        return null;
+        return new HashMap<>();
     }
 
     @Override
