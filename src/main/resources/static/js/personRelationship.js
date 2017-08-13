@@ -57,7 +57,7 @@ function loadRelationshipPersonal() {
                             curveness: 0.0
                         }
                     },
-                    edgeSymbol: ['arrow', 'arrow'],
+                    edgeSymbol: ['point', 'arrow'],
                     force: {
                         repulsion: 100,
                         edgeLength: 100

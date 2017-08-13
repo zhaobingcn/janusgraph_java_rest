@@ -72,6 +72,61 @@ public class OLTPController {
         return ResponseEntity.status(HttpStatus.OK).body(clientInfo);
     }
 
+    @RequestMapping(value = "/isInComingEdgeExist/{nodeId}", method = RequestMethod.GET)
+    public ResponseEntity<ClientInfo> isInComingEdgeExist(@PathVariable(value = "label")String label,
+                                                          @PathVariable(value = "nodeId")String nodeId){
+        ClientInfo clientInfo = new ClientInfo();
+        Map<String, Object> result = new HashMap<>();
+        result.put("state", dao.isInComingEdgeEsist(label, nodeId));
+        clientInfo.setData(result);
+        clientInfo.setStatus(new Status("200", "执行成功"));
+        return ResponseEntity.ok(clientInfo);
+    }
+
+    @RequestMapping(value = "/isOutGoingEdgeExist/{nodeId}", method = RequestMethod.GET)
+    public ResponseEntity<ClientInfo> isOutGoingEdgeExist(@PathVariable(value = "label")String label,
+                                                          @PathVariable(value = "nodeId")String nodeId){
+        ClientInfo clientInfo = new ClientInfo();
+        Map<String, Object> result = new HashMap<>();
+        result.put("state", dao.isOutGoingEdgeExist(label, nodeId));
+        clientInfo.setData(result);
+        clientInfo.setStatus(new Status("200", "执行成功"));
+        return ResponseEntity.ok(clientInfo);
+    }
+
+    @RequestMapping(value = "/deleteOutGoingEdge/{nodeId}", method = RequestMethod.DELETE)
+    public ResponseEntity<ClientInfo> deleteOutGoingEdge(@PathVariable(value = "label")String label,
+                                                          @PathVariable(value = "nodeId")String nodeId){
+        ClientInfo clientInfo = new ClientInfo();
+        Map<String, Object> result = new HashMap<>();
+        result.put("state", dao.deleteOutGoingEdge(label, nodeId));
+        clientInfo.setData(result);
+        clientInfo.setStatus(new Status("200", "执行成功"));
+        return ResponseEntity.ok(clientInfo);
+    }
+
+    @RequestMapping(value = "/deleteInComingEdge/{nodeId}", method = RequestMethod.DELETE)
+    public ResponseEntity<ClientInfo> deleteInComingEdge(@PathVariable(value = "label")String label,
+                                                         @PathVariable(value = "nodeId")String nodeId){
+        ClientInfo clientInfo = new ClientInfo();
+        Map<String, Object> result = new HashMap<>();
+        result.put("state", dao.deleteInComingEdge(label, nodeId));
+        clientInfo.setData(result);
+        clientInfo.setStatus(new Status("200", "执行成功"));
+        return ResponseEntity.ok(clientInfo);
+    }
+
+    @RequestMapping(value = "/deleteNodeEdge/{nodeId}", method = RequestMethod.DELETE)
+    public ResponseEntity<ClientInfo> deleteNodeEdge(@PathVariable(value = "label")String label,
+                                                         @PathVariable(value = "nodeId")String nodeId){
+        ClientInfo clientInfo = new ClientInfo();
+        Map<String, Object> result = new HashMap<>();
+        result.put("state", dao.deleteNodeEdge(label, nodeId));
+        clientInfo.setData(result);
+        clientInfo.setStatus(new Status("200", "执行成功"));
+        return ResponseEntity.ok(clientInfo);
+    }
+
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     public ResponseEntity<ClientInfo> updateNode(@PathVariable(value = "label")String label,
                                             @RequestBody Map map){
@@ -116,6 +171,20 @@ public class OLTPController {
     public ResponseEntity<ClientInfo> findByProperties(@PathVariable(value = "label")String label,
                                                     @RequestBody Map<String, Object> map){
         List<Vertex> nodes = dao.findNodesByTypeAndVersion(label, map);
+        List<Map<String, Object>> displayNodes = new ArrayList<>();
+        for(Vertex displayNode:nodes){
+            displayNodes.add(dao.transferVertexToMap(displayNode));
+        }
+        ClientInfo clientInfo = new ClientInfo();
+        clientInfo.setData(displayNodes);
+        clientInfo.setStatus(new Status("200", "查找成功"));
+        return ResponseEntity.ok(clientInfo);
+    }
+
+    @RequestMapping(value = "/fuzzyFindByType/{fuzzyString}", method = RequestMethod.GET)
+    public ResponseEntity<ClientInfo> fuzzyFindByType(@PathVariable(value = "label")String label,
+                                                      @PathVariable(value = "fuzzyString")String fuzzyString){
+        List<Vertex> nodes = dao.fuzzyFindVertexByType(label, fuzzyString);
         List<Map<String, Object>> displayNodes = new ArrayList<>();
         for(Vertex displayNode:nodes){
             displayNodes.add(dao.transferVertexToMap(displayNode));

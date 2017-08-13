@@ -2,12 +2,12 @@ package com.didichuxing.janusgraph.reposity.impl;
 
 import com.didichuxing.janusgraph.generic.RelationType;
 import com.didichuxing.janusgraph.reposity.Dao;
-import org.apache.tinkerpop.gremlin.structure.Edge;
-import org.apache.tinkerpop.gremlin.structure.Property;
-import org.apache.tinkerpop.gremlin.structure.Vertex;
+import org.apache.tinkerpop.gremlin.structure.*;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
+
+import static org.janusgraph.core.attribute.Text.*;
 
 
 /**
@@ -18,40 +18,46 @@ public class DaoImpl implements Dao {
 
     private JanusgraphClient janusgraph = JanusgraphClient.getJanusgraph();
 
-
     @Override
     public boolean addNode(String label, Map<String, Object> nodeDetail) {
-        Vertex node = janusgraph.graph.addVertex(label);
-        for(Map.Entry<String, Object> property: nodeDetail.entrySet()){
-            if(property.getKey().toString() != "inComingEdge" &&
-                    property.getKey().toString() != "outGoingEdge"){
-                node.property(property.getKey(), property.getValue());
+        try{
+            Vertex node = janusgraph.graph.addVertex(label);
+            for(Map.Entry<String, Object> property: nodeDetail.entrySet()){
+                if(property.getKey().toString() != "inComingEdge" &&
+                        property.getKey().toString() != "outGoingEdge"){
+                    node.property(property.getKey(), property.getValue());
+                }
             }
-        }
-        //因为添加点还未存在，所以不会出现重复边的问题
-        for (String nodeId : (ArrayList<String>)nodeDetail.get("inComingEdge")) {
-            if(findVertexByNodeId(nodeId) != null){
-                findVertexByNodeId(nodeId).addEdge(RelationType.Link, node)
-                        .property("edgeId", nodeId + nodeDetail.get("nodeId"));
+            //因为添加点还未存在，所以不会出现重复边的问题
+            for (String nodeId : (ArrayList<String>)nodeDetail.get("inComingEdge")) {
+                if(findVertexByNodeId(nodeId) != null){
+                    findVertexByNodeId(nodeId).addEdge(RelationType.Link, node)
+                            .property("edgeId", nodeId + nodeDetail.get("nodeId"));
+                }
             }
-        }
-        for (String nodeId : (ArrayList<String>)nodeDetail.get("outGoingEdge")) {
-            if(findVertexByNodeId(nodeId) != null){
-                node.addEdge(RelationType.Link, findVertexByNodeId(nodeId))
-                        .property("edgeId", nodeDetail.get("nodeId") + nodeId);
+            for (String nodeId : (ArrayList<String>)nodeDetail.get("outGoingEdge")) {
+                if(findVertexByNodeId(nodeId) != null){
+                    node.addEdge(RelationType.Link, findVertexByNodeId(nodeId))
+                            .property("edgeId", nodeDetail.get("nodeId") + nodeId);
+                }
             }
+            janusgraph.graph.tx().commit();
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            janusgraph.graph.tx().rollback();
         }
-        janusgraph.graph.tx().commit();
-        return true;
+        return false;
     }
 
     @Override
     public boolean addEdge(String startNodeId, String endNodeId) {
-        if (!isEdgeExist(startNodeId, endNodeId)) {
+        if(!isEdgeExist(startNodeId, endNodeId)){
             Vertex startNode = findVertexByNodeId(startNodeId);
             Vertex endNode = findVertexByNodeId(endNodeId);
-            startNode.addEdge(RelationType.Link, endNode).property("edgeId", startNodeId + endNodeId);
-            janusgraph.graph.tx().commit();
+            String edgeId = startNodeId + endNodeId;
+            startNode.addEdge(RelationType.Link, endNode).property("edgeId", edgeId);
+            janusgraph.g.tx().commit();
             return true;
         }
         return false;
@@ -65,6 +71,8 @@ public class DaoImpl implements Dao {
 
     @Override
     public Map<String, Object> findValueMapByNodeId(String label, String nodeId) {
+        //添加事务提交，捕获数据库新的修改
+        janusgraph.g.tx().commit();
         if(janusgraph.g.V().has(label, "nodeId", nodeId).hasNext()){
             return transferVertexToMap(janusgraph.g.V().has(label, "nodeId", nodeId).next());
         }
@@ -73,15 +81,29 @@ public class DaoImpl implements Dao {
 
     @Override
     public Vertex findVertexByNodeId(String nodeId) {
+        //添加事务提交，捕获数据库新的修改
+        janusgraph.g.tx().commit();
         if(janusgraph.g.V().has("nodeId", nodeId).hasNext()){
+            System.out.println("+++++++++++++++++++");
             return janusgraph.g.V().has("nodeId", nodeId).next();
+
         }
         return null;
+    }
+
+    @Override
+    public List<Vertex> fuzzyFindVertexByType(String label, String fuzzyType) {
+        //添加事务提交，捕获数据库新的修改
+        janusgraph.g.tx().commit();
+        List<Vertex> vertices = janusgraph.g.V().has("type", textRegex(".*?"+fuzzyType+".*?")).toList();
+        return vertices;
     }
 
 
     @Override
     public boolean isEdgeExist(Vertex startNode, Vertex endNode) {
+        //添加事务提交，捕获数据库新的修改
+        janusgraph.g.tx().commit();
         boolean exist = false;
         exist = janusgraph.g.V(startNode).outE().as("edge").inV().is(endNode).select("edge").hasNext();
         return exist;
@@ -89,32 +111,117 @@ public class DaoImpl implements Dao {
 
     @Override
     public boolean isEdgeExist(String startNodeId, String endNodeId) {
+        //添加事务提交，捕获数据库新的修改
+        janusgraph.g.tx().commit();
         boolean exist = false;
         String edgeId = startNodeId + endNodeId;
+//        janusgraph.g.tx().rollback();
         exist = janusgraph.g.E().has(RelationType.Link, "edgeId", edgeId).hasNext();
+//        Edge a = janusgraph.g.E().has(RelationType.Link, "edgeId", edgeId).next();
+//        System.out.println("asddddddddddddddddddddddddddd" + exist + a.id());
         return exist;
     }
 
     @Override
     public boolean isNodeExist(String label, String nodeId) {
+        //添加事务提交，捕获数据库新的修改
+        janusgraph.g.tx().commit();
         boolean exist = false;
         exist = janusgraph.g.V().has(label, "nodeId", nodeId).hasNext();
+        System.out.println("-----------------------------");
+        System.out.println(exist);
         return exist;
     }
 
     @Override
     public boolean isNodeEdgeExist(String label, String nodeId) {
+        //添加事务提交，捕获数据库新的修改
+        janusgraph.g.tx().commit();
         boolean exist = false;
-        exist = janusgraph.g.V().has(label, "nodeId", nodeId).bothE().hasNext();
+        exist = janusgraph.g.V().has(label, "nodeId", nodeId).bothE(RelationType.Link).hasNext();
+        System.out.println("节点周围是否存在边" + exist);
+        return exist;
+    }
+
+    @Override
+    public boolean isOutGoingEdgeExist(String label, String nodeId) {
+        //添加事务提交，捕获数据库新的修改
+        janusgraph.g.tx().commit();
+        boolean exist = false;
+        exist = janusgraph.g.V().has(label, "nodeId", nodeId).outE().hasNext();
+        System.out.println("节点周围是否存在出边" + exist);
+        return exist;
+    }
+
+    @Override
+    public boolean isInComingEdgeEsist(String label, String nodeId) {
+        //添加事务提交，捕获数据库新的修改
+        janusgraph.g.tx().commit();
+        boolean exist = false;
+        exist = janusgraph.g.V().has(label, "nodeId", nodeId).inE().hasNext();
+        System.out.println("节点周围是否存在入边" + exist);
         return exist;
     }
 
     @Override
     public boolean deleteNode(String label, String nodeId) {
-        if (isNodeExist(label, nodeId)) {
-            janusgraph.g.V().has(label, "nodeId", nodeId).next().remove();
+        try{
+            if (isNodeExist(label, nodeId)) {
+                janusgraph.g.V().has(label, "nodeId", nodeId).next().remove();
+                janusgraph.g.tx().commit();
+                return true;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            janusgraph.g.tx().rollback();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean deleteNodeEdge(String label, String nodeId) {
+        try{
+            Iterator<Edge> edges = janusgraph.g.V().has(label, "nodeId", nodeId).bothE();
+            while (edges.hasNext()){
+                edges.next().remove();
+            }
             janusgraph.g.tx().commit();
             return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            janusgraph.g.tx().rollback();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean deleteOutGoingEdge(String label, String nodeId) {
+        try{
+            Iterator<Edge> edges = janusgraph.g.V().has(label, "nodeId", nodeId).outE();
+            while (edges.hasNext()){
+                edges.next().remove();
+            }
+            janusgraph.g.tx().commit();
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            janusgraph.g.tx().rollback();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean deleteInComingEdge(String label, String nodeId) {
+        try {
+            Iterator<Edge> edges = janusgraph.g.V().has(label, "nodeId", nodeId).inE();
+            while (edges.hasNext()){
+                edges.next().remove();
+            }
+            janusgraph.g.tx().commit();
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            janusgraph.g.tx().rollback();
         }
         return false;
     }
@@ -125,16 +232,16 @@ public class DaoImpl implements Dao {
         Vertex startNode = janusgraph.g.V().has("nodeId", startNodeId).next();
         Vertex endNode = janusgraph.g.V().has("nodeId", endNodeId).next();
         if (isEdgeExist(startNode, endNode)) {
-//            写法1
-//            List<Edge> edges = janusgraph.g.V(startNode).outE().toList();
-//            for (Edge edge : edges) {
-//                if (edge.inVertex().equals(endNode)) {
-//                    edge.remove();
-//                    janusgraph.g.tx().commit();
-//                    return true;
-//                }
-//            }
-//            写法2
+            写法1
+            List<Edge> edges = janusgraph.g.V(startNode).outE().toList();
+            for (Edge edge : edges) {
+                if (edge.inVertex().equals(endNode)) {
+                    edge.remove();
+                    janusgraph.g.tx().commit();
+                    return true;
+                }
+            }
+            写法2
             janusgraph.g.V(startNode).outE().where(otherV().is(endNode)).drop().iterate();
             janusgraph.g.tx().commit();
             return true;
@@ -168,12 +275,16 @@ public class DaoImpl implements Dao {
 
     @Override
     public List<Vertex> findNodesByLabelAndProperty(String label, String propertyKey, String propertyValue) {
+        //添加事务提交，捕获数据库新的修改
+        janusgraph.g.tx().commit();
         List<Vertex> nodes = janusgraph.g.V().has(label, propertyKey, propertyValue).toList();
         return nodes;
     }
 
     @Override
     public List<Vertex> findNodesByTypeAndVersion(String label, Map<String, Object> typeAndVersion) {
+        //添加事务提交，捕获数据库新的修改
+        janusgraph.g.tx().commit();
         List<Vertex> nodes = janusgraph.g.V().has(label, "type", typeAndVersion.get("type"))
                 .has("version", typeAndVersion.get("version")).toList();
         return nodes;
@@ -181,6 +292,8 @@ public class DaoImpl implements Dao {
 
     @Override
     public List<Vertex> findNeighborsNodesById(long id) {
+        //添加事务提交，捕获数据库新的修改
+        janusgraph.g.tx().commit();
         List<Vertex> nodes = null;
         if(janusgraph.g.V().hasId(id).hasNext()){
             Vertex node = janusgraph.g.V().hasId(id).next();
@@ -192,12 +305,16 @@ public class DaoImpl implements Dao {
 
     @Override
     public List<Edge> findNeighborsEdgesById(long id) {
+        //添加事务提交，捕获数据库新的修改
+        janusgraph.g.tx().commit();
         List<Edge> edges = janusgraph.g.V().hasId(id).bothE().toList();
         return edges;
     }
 
     @Override
     public List<Vertex> findAllNodes() {
+        //添加事务提交，捕获数据库新的修改
+        janusgraph.g.tx().commit();
         List<Vertex> nodes = janusgraph.g.V().toList();
         return nodes;
     }
@@ -214,8 +331,6 @@ public class DaoImpl implements Dao {
         }
         return displayNode;
     }
-
-
 
     @Override
     public boolean updateEdge() {

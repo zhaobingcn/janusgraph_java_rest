@@ -28,6 +28,9 @@ public interface Dao {
     //根据id查找节点
     public Vertex findVertexByNodeId(String nodeId);
 
+    //根据节点类型模糊查询
+    public List<Vertex> fuzzyFindVertexByType(String label, String fuzzyType);
+
     //查看两个节点间的边是否存在,根据两个节点查询
     public boolean isEdgeExist(Vertex startNode, Vertex endNode);
 
@@ -40,8 +43,23 @@ public interface Dao {
     //查看一个节点是否存在边
     public boolean isNodeEdgeExist(String label, String nodeId);
 
-    //删除节点
+    //查看有没有出边
+    public boolean isOutGoingEdgeExist(String label, String nodeId);
+
+    //查看有没有入边
+    public boolean isInComingEdgeEsist(String label, String nodeId);
+
+    //根据nodeId删除节点
     public boolean deleteNode(String label, String nodeId);
+
+    //根据nodeId删除一个node旁边的所有边
+    public boolean deleteNodeEdge(String label, String nodeId);
+
+    //根据nodeId删除一个node旁边的所有出边
+    public boolean deleteOutGoingEdge(String label, String nodeId);
+
+    //根据nodeId删除一个node旁边的所有入边
+    public boolean deleteInComingEdge(String label, String nodeId);
 
     //删除边
     public boolean deleteEdge(String startNodeId, String endNodeId);

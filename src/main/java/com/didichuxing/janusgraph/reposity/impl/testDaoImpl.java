@@ -43,6 +43,7 @@ public class testDaoImpl implements testDao {
 
     @Override
     public Map<String, Object> graph() {
+        janusgraph.g.tx().commit();
         List<Edge> edges = janusgraph.g.E().toList();
         List<Vertex> vertexs = janusgraph.g.V().toList();
 
