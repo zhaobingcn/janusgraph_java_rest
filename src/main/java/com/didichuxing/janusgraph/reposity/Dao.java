@@ -29,7 +29,7 @@ public interface Dao {
     public Vertex findVertexByNodeId(String nodeId);
 
     //根据节点类型模糊查询
-    public List<Vertex> fuzzyFindVertexByType(String label, String fuzzyType);
+    public List<Vertex> fuzzyFindVertexByTitle(String label, String fuzzyTitle);
 
     //查看两个节点间的边是否存在,根据两个节点查询
     public boolean isEdgeExist(Vertex startNode, Vertex endNode);

@@ -181,10 +181,10 @@ public class OLTPController {
         return ResponseEntity.ok(clientInfo);
     }
 
-    @RequestMapping(value = "/fuzzyFindByType/{fuzzyString}", method = RequestMethod.GET)
+    @RequestMapping(value = "/fuzzyFindByTitle/{fuzzyString}", method = RequestMethod.GET)
     public ResponseEntity<ClientInfo> fuzzyFindByType(@PathVariable(value = "label")String label,
                                                       @PathVariable(value = "fuzzyString")String fuzzyString){
-        List<Vertex> nodes = dao.fuzzyFindVertexByType(label, fuzzyString);
+        List<Vertex> nodes = dao.fuzzyFindVertexByTitle(label, fuzzyString);
         List<Map<String, Object>> displayNodes = new ArrayList<>();
         for(Vertex displayNode:nodes){
             displayNodes.add(dao.transferVertexToMap(displayNode));

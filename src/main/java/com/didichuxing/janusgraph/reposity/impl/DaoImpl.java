@@ -92,10 +92,10 @@ public class DaoImpl implements Dao {
     }
 
     @Override
-    public List<Vertex> fuzzyFindVertexByType(String label, String fuzzyType) {
+    public List<Vertex> fuzzyFindVertexByTitle(String label, String fuzzyTitle) {
         //添加事务提交，捕获数据库新的修改
         janusgraph.g.tx().commit();
-        List<Vertex> vertices = janusgraph.g.V().has("type", textRegex(".*?"+fuzzyType+".*?")).toList();
+        List<Vertex> vertices = janusgraph.g.V().has("nodeTitle", textRegex(".*?"+fuzzyTitle+".*?")).toList();
         return vertices;
     }
 
