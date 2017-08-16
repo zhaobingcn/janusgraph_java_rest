@@ -1,8 +1,12 @@
 package com.didichuxing.janusgraph.reposity;
 
 import com.didichuxing.janusgraph.domain.Api;
+import com.didichuxing.janusgraph.service.TraversalService;
+import org.apache.tinkerpop.gremlin.process.traversal.TraversalSource;
+import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversalSource;
 import org.apache.tinkerpop.gremlin.structure.Edge;
 import org.apache.tinkerpop.gremlin.structure.Vertex;
+import org.janusgraph.core.JanusGraph;
 
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -29,7 +33,7 @@ public interface Dao {
     public Vertex findVertexByNodeId(String nodeId);
 
     //根据节点类型模糊查询
-    public List<Vertex> fuzzyFindVertexByTitle(String label, String fuzzyTitle);
+    public List<Vertex> fuzzyFindVertexByName(String label, String fuzzyTitle);
 
     //查看两个节点间的边是否存在,根据两个节点查询
     public boolean isEdgeExist(Vertex startNode, Vertex endNode);
@@ -76,17 +80,32 @@ public interface Dao {
     //根据联合属性查询
     public List<Vertex> findNodesByTypeAndVersion(String label, Map<String, Object> properties);
 
-    //查询一个节点的周围所有节点及自身
+    //根据id查询一个节点的周围所有节点及自身
     public List<Vertex> findNeighborsNodesById(long id);
 
-    //查询一个节点周围的所有关系
+    //根据nodeId查询一个节点周围所有节点及自身
+    public List<Vertex> findNeighborsNodesByNodeId(String label, String nodeId);
+
+    //根据id查询一个节点周围的所有关系
     public List<Edge> findNeighborsEdgesById(long id);
+
+    //根据nodeId查询一个节点周围的所有关系
+    public List<Edge> findNeighborsEdgesByNodeId(String label, String nodeId);
 
     //返回所有的节点
     public List<Vertex> findAllNodes();
 
     //将Vertex转化成Map
     public Map<String, Object> transferVertexToMap(Vertex vertex);
+
+    //根据label查找节点
+    public List<Vertex> findNodesByLabel(String label);
+
+    //根据某个节点为中心，找他周围几度的节点集合
+    public GraphTraversalSource findSubGraph(long id, int depth);
+
+    //根据某个节点为中心，找他周围几度节点的集合
+    public GraphTraversalSource findSubGraph(String label, String nodeId, int depth);
 
     //TODO
     public boolean updateEdge();

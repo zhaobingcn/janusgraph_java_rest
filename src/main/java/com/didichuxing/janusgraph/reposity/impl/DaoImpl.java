@@ -2,7 +2,12 @@ package com.didichuxing.janusgraph.reposity.impl;
 
 import com.didichuxing.janusgraph.generic.RelationType;
 import com.didichuxing.janusgraph.reposity.Dao;
+import org.apache.tinkerpop.gremlin.process.traversal.TraversalSource;
+import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversalSource;
+import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.__;
 import org.apache.tinkerpop.gremlin.structure.*;
+import org.apache.tinkerpop.gremlin.tinkergraph.structure.TinkerGraph;
+import org.janusgraph.core.JanusGraph;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
@@ -92,10 +97,10 @@ public class DaoImpl implements Dao {
     }
 
     @Override
-    public List<Vertex> fuzzyFindVertexByTitle(String label, String fuzzyTitle) {
+    public List<Vertex> fuzzyFindVertexByName(String label, String fuzzyName) {
         //添加事务提交，捕获数据库新的修改
         janusgraph.g.tx().commit();
-        List<Vertex> vertices = janusgraph.g.V().has("nodeTitle", textRegex(".*?"+fuzzyTitle+".*?")).toList();
+        List<Vertex> vertices = janusgraph.g.V().hasLabel(label).has("nodeName", textRegex(".*?"+fuzzyName+".*?")).toList();
         return vertices;
     }
 
@@ -294,7 +299,7 @@ public class DaoImpl implements Dao {
     public List<Vertex> findNeighborsNodesById(long id) {
         //添加事务提交，捕获数据库新的修改
         janusgraph.g.tx().commit();
-        List<Vertex> nodes = null;
+        List<Vertex> nodes = new ArrayList<>();
         if(janusgraph.g.V().hasId(id).hasNext()){
             Vertex node = janusgraph.g.V().hasId(id).next();
             nodes = janusgraph.g.V().hasId(id).both().toList();
@@ -304,12 +309,41 @@ public class DaoImpl implements Dao {
     }
 
     @Override
+    public List<Vertex> findNeighborsNodesByNodeId(String label, String nodeId) {
+        //添加事务提交，捕获数据库新的修改
+        janusgraph.g.tx().commit();
+        List<Vertex> nodes = new ArrayList<>();
+        if(janusgraph.g.V().has(label, "nodeId", nodeId).hasNext()){
+            Vertex node = janusgraph.g.V().has(label, "nodeId", nodeId).next();
+            nodes = janusgraph.g.V().has(label, "nodeId", nodeId).both().toList();
+            nodes.add(node);
+        }
+        return nodes;
+    }
+
+    @Override
     public List<Edge> findNeighborsEdgesById(long id) {
         //添加事务提交，捕获数据库新的修改
         janusgraph.g.tx().commit();
-        List<Edge> edges = janusgraph.g.V().hasId(id).bothE().toList();
+        List<Edge> edges = new ArrayList<>();
+        if(janusgraph.g.V().hasId(id).hasNext()){
+            edges = janusgraph.g.V().hasId(id).bothE().toList();
+        }
         return edges;
     }
+
+    @Override
+    public List<Edge> findNeighborsEdgesByNodeId(String label, String nodeId) {
+        //添加事务提交，捕获数据库新的修改
+        janusgraph.g.tx().commit();
+        List<Edge> edges = new ArrayList<>();
+        if(janusgraph.g.V().has(label, "nodeId", nodeId).hasNext()){
+            edges = janusgraph.g.V().has(label, "nodeId", nodeId).bothE().toList();
+        }
+        return edges;
+    }
+
+
 
     @Override
     public List<Vertex> findAllNodes() {
@@ -330,6 +364,32 @@ public class DaoImpl implements Dao {
             displayNode.put(property.key(), property.value());
         }
         return displayNode;
+    }
+
+    @Override
+    public List<Vertex> findNodesByLabel(String label) {
+        //添加事务提交，捕获数据库新的修改
+        janusgraph.g.tx().commit();
+        List<Vertex> nodes = janusgraph.g.V().hasLabel(label).toList();
+        return nodes;
+    }
+
+    @Override
+    public GraphTraversalSource findSubGraph(long id, int depth) {
+        //添加事务提交，捕获数据库新的修改
+        janusgraph.g.tx().commit();
+        TinkerGraph subGraph = (TinkerGraph) janusgraph.g.V(id).repeat(__.bothE().subgraph("subGraph").bothV()).times(depth).cap("subGraph").next();
+        GraphTraversalSource sg = subGraph.traversal();
+        return sg;
+    }
+
+    @Override
+    public GraphTraversalSource findSubGraph(String label, String nodeId, int depth) {
+        //添加事务提交，捕获数据库新的修改
+        janusgraph.g.tx().commit();
+        TinkerGraph subGraph = (TinkerGraph) janusgraph.g.V().has(label, "nodeId", nodeId).repeat(__.bothE().subgraph("subGraph").bothV()).times(depth).cap("subGraph").next();
+        GraphTraversalSource sg = subGraph.traversal();
+        return sg;
     }
 
     @Override

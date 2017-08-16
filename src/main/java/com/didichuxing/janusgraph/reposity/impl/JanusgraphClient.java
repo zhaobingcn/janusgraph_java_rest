@@ -19,7 +19,9 @@ public class JanusgraphClient {
             graph = JanusGraphFactory.build().set("storage.backend", "hbase")
                     .set("storage.hostname", "127.0.0.1")
                     .set("tx.max-commit-time", "1000ms")
+                    .set("storage.hbase.table", "testgraph4")
                     .open();
+//            graph = JanusGraphFactory.open("src/main/resources/janusgraph-hbase.properties");
             g = graph.traversal();
         }
     }

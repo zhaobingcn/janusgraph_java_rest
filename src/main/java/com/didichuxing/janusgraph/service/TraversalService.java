@@ -16,4 +16,10 @@ public interface TraversalService {
 
     public Map<String, Object> generateGraph(long id);
 
+    public Map<String, Object> generateGraph(String label, String nodeId);
+
+    public Map<String, Object> generateGraph(String label, String nodeId, int depth);
+
+    public Map<String, Object> generateGraph(long id, int depth);
+
 }
