@@ -4,6 +4,10 @@ import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversalSo
 import org.janusgraph.core.JanusGraph;
 import org.janusgraph.core.JanusGraphFactory;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.Properties;
+
 /**
  * Created by zhzy on 2017/7/19.
  */
@@ -15,15 +19,25 @@ public class JanusgraphClient {
     public GraphTraversalSource g = null;
 
     private JanusgraphClient(){
-        if(graph == null){
-            graph = JanusGraphFactory.build().set("storage.backend", "hbase")
-                    .set("storage.hostname", "127.0.0.1")
-                    .set("tx.max-commit-time", "1000ms")
-                    .set("storage.hbase.table", "testgraph4")
-                    .open();
-//            graph = JanusGraphFactory.open("src/main/resources/janusgraph-hbase.properties");
-            g = graph.traversal();
+        Properties prop = new Properties();
+        try {
+            prop.load(this.getClass().getResourceAsStream("/janusgraph-hbase.properties"));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+        if(graph == null){
+            graph = JanusGraphFactory.build().set("storage.backend", prop.getProperty("storage.backend"))
+                    .set("storage.hostname", prop.getProperty("storage.hostname"))
+                    .set("storage.hbase.table", prop.getProperty("storage.hbase.table"))
+                    .set("storage.hbase.compression-algorithm", prop.getProperty("storage.hbase.compression-algorithm"))
+//                    .set("tx.max-commit-time", "1000ms")
+//                    .set("storage.hbase.table", "WOATER:JANUSGRAPH")
+                    .open();
+//                graph = JanusGraphFactory.open();
+                g = graph.traversal();
+            }
+
+
     }
 
     public static JanusgraphClient getJanusgraph(){

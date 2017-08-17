@@ -128,6 +128,9 @@ public class TraversalServiceImpl implements TraversalService {
         if(vertices.isEmpty()){
             return result;
         }
+        if(vertices.size() == 0){
+            return result;
+        }
         List<Edge> edges = sg.E().toList();
 
         List<Map<String, Object>> nodes = new ArrayList<>();
@@ -137,7 +140,7 @@ public class TraversalServiceImpl implements TraversalService {
         int i = 0;
         for(Vertex vertex: vertices){
             nodes.add(dao.transferVertexToMap(vertex));
-//            System.out.println("++++++++++++" + vertex.property("nodeId").value().toString());
+            System.out.println("++++++++++++" + vertex.property("nodeId").value().toString());
             nodesId.put(vertex.property("nodeId").value().toString(), i);
             i++;
         }
