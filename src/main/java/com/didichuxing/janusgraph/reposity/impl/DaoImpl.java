@@ -2,12 +2,13 @@ package com.didichuxing.janusgraph.reposity.impl;
 
 import com.didichuxing.janusgraph.generic.RelationType;
 import com.didichuxing.janusgraph.reposity.Dao;
-import org.apache.tinkerpop.gremlin.process.traversal.TraversalSource;
 import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversalSource;
 import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.__;
 import org.apache.tinkerpop.gremlin.structure.*;
 import org.apache.tinkerpop.gremlin.tinkergraph.structure.TinkerGraph;
-import org.janusgraph.core.JanusGraph;
+import org.janusgraph.core.SchemaViolationException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
@@ -20,6 +21,8 @@ import static org.janusgraph.core.attribute.Text.*;
  */
 @Repository
 public class DaoImpl implements Dao {
+
+    private final static Logger logger = LoggerFactory.getLogger(DaoImpl.class);
 
     private JanusgraphClient janusgraph = JanusgraphClient.getJanusgraph();
 
@@ -48,7 +51,11 @@ public class DaoImpl implements Dao {
             }
             janusgraph.graph.tx().commit();
             return true;
-        }catch (Exception e){
+        }catch (SchemaViolationException e){
+            logger.warn("添加数据nodeId出现重复，本次添加失败");
+            janusgraph.graph.tx().rollback();
+        }
+        catch (Exception e){
             e.printStackTrace();
             janusgraph.graph.tx().rollback();
         }
@@ -388,6 +395,42 @@ public class DaoImpl implements Dao {
         //添加事务提交，捕获数据库新的修改
         janusgraph.g.tx().commit();
         TinkerGraph subGraph = (TinkerGraph) janusgraph.g.V().has(label, "nodeId", nodeId).repeat(__.bothE().subgraph("subGraph").bothV()).times(depth).cap("subGraph").next();
+        GraphTraversalSource sg = subGraph.traversal();
+        return sg;
+    }
+
+    @Override
+    public GraphTraversalSource findInComingEdge(long id, int depth) {
+        //添加事务提交，捕获数据库新的修改
+        janusgraph.g.tx().commit();
+        TinkerGraph subGraph = (TinkerGraph) janusgraph.g.V(id).repeat(__.inE().subgraph("subGraph").outV()).times(depth).cap("subGraph").next();
+        GraphTraversalSource sg = subGraph.traversal();
+        return sg;
+    }
+
+    @Override
+    public GraphTraversalSource findInComingEdge(String label, String nodeId, int depth) {
+        //添加事务提交，捕获数据库新的修改
+        janusgraph.g.tx().commit();
+        TinkerGraph subGraph = (TinkerGraph) janusgraph.g.V().has(label, "nodeId", nodeId).repeat(__.inE().subgraph("subGraph").outV()).times(depth).cap("subGraph").next();
+        GraphTraversalSource sg = subGraph.traversal();
+        return sg;
+    }
+
+    @Override
+    public GraphTraversalSource findOutGoingEdge(long id, int depth) {
+        //添加事务提交，捕获数据库新的修改
+        janusgraph.g.tx().commit();
+        TinkerGraph subGraph = (TinkerGraph) janusgraph.g.V(id).repeat(__.outE().subgraph("subGraph").inV()).times(depth).cap("subGraph").next();
+        GraphTraversalSource sg = subGraph.traversal();
+        return sg;
+    }
+
+    @Override
+    public GraphTraversalSource findOutGoingEdge(String label, String nodeId, int depth) {
+        //添加事务提交，捕获数据库新的修改
+        janusgraph.g.tx().commit();
+        TinkerGraph subGraph = (TinkerGraph) janusgraph.g.V().has(label, "nodeId", nodeId).repeat(__.outE().subgraph("subGraph").inV()).times(depth).cap("subGraph").next();
         GraphTraversalSource sg = subGraph.traversal();
         return sg;
     }

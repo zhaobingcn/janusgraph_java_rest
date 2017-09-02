@@ -50,5 +50,47 @@ public class TravesalController {
         return ResponseEntity.ok(clientInfo);
     }
 
+    @RequestMapping(value = "/findUpStreamById/{id}/{depth}", method = RequestMethod.GET)
+    public ResponseEntity<ClientInfo> findUpStreamById(@PathVariable(value = "id")long id,
+                                                       @PathVariable(value = "depth")int depth){
+        ClientInfo clientInfo = new ClientInfo();
+        clientInfo.setStatus(new Status("200", "查找成功"));
+        clientInfo.setData(traversalService.generateUpStreamGraph(id, depth));
+        return ResponseEntity.ok(clientInfo);
+    }
+
+    @RequestMapping(value = "/findUpStreamByNodeId", method = RequestMethod.POST)
+    public ResponseEntity<ClientInfo> findUpStreamByNodeId(@RequestBody Map<String, Object> map){
+        String label = map.get("label").toString();
+        Integer depth = Integer.valueOf(map.get("depth").toString());
+        String nodeId = map.get("nodeId").toString();
+
+        ClientInfo clientInfo = new ClientInfo();
+        clientInfo.setStatus(new Status("200", "查找成功"));
+        clientInfo.setData(traversalService.generateUpStreamGraph(label, nodeId, depth));
+        return ResponseEntity.ok(clientInfo);
+    }
+
+    @RequestMapping(value = "/findDownStreamById/{id}/{depth}", method = RequestMethod.GET)
+    public ResponseEntity<ClientInfo> findDownStreamById(@PathVariable(value = "id")long id,
+                                                         @PathVariable(value = "depth")int depth){
+        ClientInfo clientInfo = new ClientInfo();
+        clientInfo.setStatus(new Status("200", "查找成功"));
+        clientInfo.setData(traversalService.generateDownStreamGraph(id, depth));
+        return ResponseEntity.ok(clientInfo);
+    }
+
+    @RequestMapping(value = "/findDownStreamByNodeId", method = RequestMethod.POST)
+    public ResponseEntity<ClientInfo> findDownStreamByNodeId(@RequestBody Map<String, Object> map){
+        String label = map.get("label").toString();
+        Integer depth = Integer.valueOf(map.get("depth").toString());
+        String nodeId = map.get("nodeId").toString();
+
+        ClientInfo clientInfo = new ClientInfo();
+        clientInfo.setStatus(new Status("200", "查找成功"));
+        clientInfo.setData(traversalService.generateDownStreamGraph(label, nodeId, depth));
+        return ResponseEntity.ok(clientInfo);
+    }
+
 
 }

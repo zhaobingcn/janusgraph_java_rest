@@ -117,6 +117,30 @@ public class TraversalServiceImpl implements TraversalService {
         return generateGraph(sg);
     }
 
+    @Override
+    public Map<String, Object> generateUpStreamGraph(long id, int depth) {
+        GraphTraversalSource sg = dao.findInComingEdge(id, depth);
+        return generateGraph(sg);
+    }
+
+    @Override
+    public Map<String, Object> generateUpStreamGraph(String label, String nodeId, int depth) {
+        GraphTraversalSource sg = dao.findInComingEdge(label, nodeId, depth);
+        return generateGraph(sg);
+    }
+
+    @Override
+    public Map<String, Object> generateDownStreamGraph(long id, int depth) {
+        GraphTraversalSource sg = dao.findOutGoingEdge(id, depth);
+        return generateGraph(sg);
+    }
+
+    @Override
+    public Map<String, Object> generateDownStreamGraph(String label, String nodeId, int depth) {
+        GraphTraversalSource sg = dao.findOutGoingEdge(label, nodeId, depth);
+        return generateGraph(sg);
+    }
+
 
     public Map<String, Object> generateGraph(GraphTraversalSource sg) {
 

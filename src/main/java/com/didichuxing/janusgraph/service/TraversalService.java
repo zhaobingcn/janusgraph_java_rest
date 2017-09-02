@@ -22,4 +22,12 @@ public interface TraversalService {
 
     public Map<String, Object> generateGraph(long id, int depth);
 
+    public Map<String, Object> generateUpStreamGraph(long id, int depth);
+
+    public Map<String, Object> generateUpStreamGraph(String label, String nodeId, int depth);
+
+    public Map<String, Object> generateDownStreamGraph(long id, int depth);
+
+    public Map<String, Object> generateDownStreamGraph(String label, String nodeId, int depth);
+
 }

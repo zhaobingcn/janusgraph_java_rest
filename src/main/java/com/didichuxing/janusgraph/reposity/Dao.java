@@ -7,6 +7,7 @@ import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversalSo
 import org.apache.tinkerpop.gremlin.structure.Edge;
 import org.apache.tinkerpop.gremlin.structure.Vertex;
 import org.janusgraph.core.JanusGraph;
+import org.stringtemplate.v4.ST;
 
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -106,6 +107,18 @@ public interface Dao {
 
     //根据某个节点为中心，找他周围几度节点的集合
     public GraphTraversalSource findSubGraph(String label, String nodeId, int depth);
+
+    //找到上游的几层节点
+    public GraphTraversalSource findInComingEdge(long id, int depth);
+
+    //找到上游的几层节点
+    public GraphTraversalSource findInComingEdge(String label, String nodeId, int depth);
+
+    //找到下游的几层节点
+    public GraphTraversalSource findOutGoingEdge(long id, int depth);
+
+    //找到下游的几层节点
+    public GraphTraversalSource findOutGoingEdge(String label, String nodeId, int depth);
 
     //TODO
     public boolean updateEdge();
