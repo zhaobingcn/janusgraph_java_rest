@@ -15,6 +15,7 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping(value = "/traversal")
+
 public class TravesalController {
 
     @Autowired
@@ -91,6 +92,4 @@ public class TravesalController {
         clientInfo.setData(traversalService.generateDownStreamGraph(label, nodeId, depth));
         return ResponseEntity.ok(clientInfo);
     }
-
-
 }

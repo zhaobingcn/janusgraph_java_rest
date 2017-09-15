@@ -14,7 +14,7 @@ import java.util.Map;
  * Created by zhzy on 2017/7/19.
  */
 @Controller
-@RequestMapping("kafka")
+@RequestMapping("/kafka")
 public class KafkaController {
     @Autowired
     private KafkaDao kafkaDao;
