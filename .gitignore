@@ -1,5 +1,7 @@
-target/
-db/
-.iml
 .idea
-
+target
+*.iml
+*.class
+*.jar
+*.pyc
+Logs

@@ -4054,3 +4054,716 @@ Caused by: com.fasterxml.jackson.core.JsonParseException: Unexpected character (
 2017/09/15-19:40 [Thread-17] INFO  org.eclipse.jetty.server.ServerConnector- Stopped ServerConnector@6e75b590{HTTP/1.1}{0.0.0.0:8081}
 2017/09/15-19:40 [Thread-17] INFO  application- Destroying Spring FrameworkServlet 'dispatcherServlet'
 2017/09/15-19:40 [Thread-17] INFO  org.eclipse.jetty.server.handler.ContextHandler- Stopped o.s.b.c.e.j.JettyEmbeddedWebAppContext@4b4c4df{/,file:/private/var/folders/zw/5v288pg55d50jjnqnql0v8b40000gn/T/jetty-docbase.6866918822782870064.8081/,UNAVAILABLE}
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Adding [servletContextInitParams] PropertySource with lowest search precedence
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Adding [jndiProperties] PropertySource with lowest search precedence
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Adding [systemProperties] PropertySource with lowest search precedence
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Adding [systemEnvironment] PropertySource with lowest search precedence
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,jndiProperties,systemProperties,systemEnvironment]
+2018/03/09-15:43 [main] INFO  com.didichuxing.janusgraph.SpringbootSdnApplication- Starting SpringbootSdnApplication on zhzy with PID 10138 (/Users/zhzy/IdeaProjects/janusgraph_java_rest/target/classes started by zhzy in /Users/zhzy/IdeaProjects/janusgraph_java_rest)
+2018/03/09-15:43 [main] INFO  com.didichuxing.janusgraph.SpringbootSdnApplication- No active profile set, falling back to default profiles: default
+2018/03/09-15:43 [main] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext- Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c98b23: startup date [Fri Mar 09 15:43:54 CST 2018]; root of context hierarchy
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Adding [applicationConfig: [classpath:/application.properties]] PropertySource with search precedence immediately lower than [applicationConfigurationProperties]
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Removing [applicationConfigurationProperties] PropertySource
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Removing [defaultProperties] PropertySource
+2018/03/09-15:43 [main] INFO  org.springframework.boot.context.embedded.jetty.JettyEmbeddedServletContainerFactory- Server initialized with port: 8081
+2018/03/09-15:43 [main] INFO  org.eclipse.jetty.server.Server- jetty-9.2.17.v20160517
+2018/03/09-15:43 [main] INFO  application- Initializing Spring embedded WebApplicationContext
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.ContextLoader- Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2018/03/09-15:43 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 1709 ms
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Adding [servletContextInitParams] PropertySource with lowest search precedence
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Adding [jndiProperties] PropertySource with lowest search precedence
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Adding [systemProperties] PropertySource with lowest search precedence
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Adding [systemEnvironment] PropertySource with lowest search precedence
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,jndiProperties,systemProperties,systemEnvironment]
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Adding [servletContextInitParams] PropertySource with lowest search precedence
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Adding [jndiProperties] PropertySource with lowest search precedence
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Adding [systemProperties] PropertySource with lowest search precedence
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Adding [systemEnvironment] PropertySource with lowest search precedence
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,jndiProperties,systemProperties,systemEnvironment]
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Adding [servletContextInitParams] PropertySource with lowest search precedence
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Adding [jndiProperties] PropertySource with lowest search precedence
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Adding [systemProperties] PropertySource with lowest search precedence
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Adding [systemEnvironment] PropertySource with lowest search precedence
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,jndiProperties,systemProperties,systemEnvironment]
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Adding [servletContextInitParams] PropertySource with lowest search precedence
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Adding [jndiProperties] PropertySource with lowest search precedence
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Adding [systemProperties] PropertySource with lowest search precedence
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Adding [systemEnvironment] PropertySource with lowest search precedence
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,jndiProperties,systemProperties,systemEnvironment]
+2018/03/09-15:43 [main] INFO  org.springframework.boot.context.embedded.ServletRegistrationBean- Mapping servlet: 'dispatcherServlet' to [/]
+2018/03/09-15:43 [main] INFO  org.springframework.boot.context.embedded.FilterRegistrationBean- Mapping filter: 'characterEncodingFilter' to: [/*]
+2018/03/09-15:43 [main] INFO  org.springframework.boot.context.embedded.FilterRegistrationBean- Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018/03/09-15:43 [main] INFO  org.springframework.boot.context.embedded.FilterRegistrationBean- Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018/03/09-15:43 [main] INFO  org.springframework.boot.context.embedded.FilterRegistrationBean- Mapping filter: 'requestContextFilter' to: [/*]
+2018/03/09-15:43 [main] INFO  org.eclipse.jetty.server.handler.ContextHandler- Started o.s.b.c.e.j.JettyEmbeddedWebAppContext@3c17c711{/,file:/private/var/folders/zw/5v288pg55d50jjnqnql0v8b40000gn/T/jetty-docbase.5485613246909816534.8081/,AVAILABLE}
+2018/03/09-15:43 [main] INFO  org.eclipse.jetty.server.Server- Started @10931ms
+2018/03/09-15:43 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Replacing [servletContextInitParams] PropertySource with [servletContextInitParams]
+2018/03/09-15:43 [main] INFO  org.janusgraph.diskstorage.hbase.HBaseCompatLoader- Instantiated HBase compatibility layer supporting runtime HBase version 1.2.4: org.janusgraph.diskstorage.hbase.HBaseCompat1_0
+2018/03/09-15:43 [main] INFO  org.janusgraph.diskstorage.hbase.HBaseStoreManager- Copied host list from root.storage.hostname to hbase.zookeeper.quorum: 127.0.0.1
+2018/03/09-15:43 [main] WARN  org.apache.hadoop.util.NativeCodeLoader- Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018/03/09-15:43 [main] INFO  org.apache.hadoop.hbase.zookeeper.RecoverableZooKeeper- Process identifier=hconnection-0x2b4f67fa connecting to ZooKeeper ensemble=127.0.0.1:2181
+2018/03/09-15:43 [main] INFO  org.apache.zookeeper.ZooKeeper- Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+2018/03/09-15:43 [main] INFO  org.apache.zookeeper.ZooKeeper- Client environment:host.name=localhost
+2018/03/09-15:43 [main] INFO  org.apache.zookeeper.ZooKeeper- Client environment:java.version=1.8.0_121
+2018/03/09-15:43 [main] INFO  org.apache.zookeeper.ZooKeeper- Client environment:java.vendor=Oracle Corporation
+2018/03/09-15:43 [main] INFO  org.apache.zookeeper.ZooKeeper- Client environment:java.home=/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre
+2018/03/09-15:43 [main] INFO  org.apache.zookeeper.ZooKeeper- Client environment:java.class.path=/Users/zhzy/ProfessionalSoftware/apache-maven-3.3.9/boot/plexus-classworlds-2.5.2.jar
+2018/03/09-15:43 [main] INFO  org.apache.zookeeper.ZooKeeper- Client environment:java.library.path=/Users/zhzy/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+2018/03/09-15:43 [main] INFO  org.apache.zookeeper.ZooKeeper- Client environment:java.io.tmpdir=/var/folders/zw/5v288pg55d50jjnqnql0v8b40000gn/T/
+2018/03/09-15:43 [main] INFO  org.apache.zookeeper.ZooKeeper- Client environment:java.compiler=<NA>
+2018/03/09-15:43 [main] INFO  org.apache.zookeeper.ZooKeeper- Client environment:os.name=Mac OS X
+2018/03/09-15:43 [main] INFO  org.apache.zookeeper.ZooKeeper- Client environment:os.arch=x86_64
+2018/03/09-15:43 [main] INFO  org.apache.zookeeper.ZooKeeper- Client environment:os.version=10.13.1
+2018/03/09-15:43 [main] INFO  org.apache.zookeeper.ZooKeeper- Client environment:user.name=zhzy
+2018/03/09-15:43 [main] INFO  org.apache.zookeeper.ZooKeeper- Client environment:user.home=/Users/zhzy
+2018/03/09-15:43 [main] INFO  org.apache.zookeeper.ZooKeeper- Client environment:user.dir=/Users/zhzy/IdeaProjects/janusgraph_java_rest
+2018/03/09-15:43 [main] INFO  org.apache.zookeeper.ZooKeeper- Initiating client connection, connectString=127.0.0.1:2181 sessionTimeout=90000 watcher=hconnection-0x2b4f67fa0x0, quorum=127.0.0.1:2181, baseZNode=/hbase
+2018/03/09-15:43 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2018/03/09-15:43 [main-SendThread(127.0.0.1:2181)] WARN  org.apache.zookeeper.ClientCnxn- Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2018/03/09-15:43 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2018/03/09-15:43 [main-SendThread(127.0.0.1:2181)] WARN  org.apache.zookeeper.ClientCnxn- Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2018/03/09-15:44 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2018/03/09-15:44 [main-SendThread(127.0.0.1:2181)] WARN  org.apache.zookeeper.ClientCnxn- Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2018/03/09-15:44 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2018/03/09-15:44 [main-SendThread(127.0.0.1:2181)] WARN  org.apache.zookeeper.ClientCnxn- Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2018/03/09-15:44 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2018/03/09-15:44 [main-SendThread(127.0.0.1:2181)] WARN  org.apache.zookeeper.ClientCnxn- Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2018/03/09-15:44 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2018/03/09-15:44 [main-SendThread(127.0.0.1:2181)] WARN  org.apache.zookeeper.ClientCnxn- Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2018/03/09-15:44 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2018/03/09-15:44 [main-SendThread(127.0.0.1:2181)] WARN  org.apache.zookeeper.ClientCnxn- Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2018/03/09-15:44 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2018/03/09-15:44 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Socket connection established to 127.0.0.1/127.0.0.1:2181, initiating session
+2018/03/09-15:44 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Session establishment complete on server 127.0.0.1/127.0.0.1:2181, sessionid = 0x16209b787700000, negotiated timeout = 40000
+2018/03/09-15:44 [main] INFO  org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation- Closing master protocol: MasterService
+2018/03/09-15:44 [main] INFO  org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation- Closing zookeeper sessionid=0x16209b787700000
+2018/03/09-15:44 [main] INFO  org.apache.zookeeper.ZooKeeper- Session: 0x16209b787700000 closed
+2018/03/09-15:44 [main-EventThread] INFO  org.apache.zookeeper.ClientCnxn- EventThread shut down
+2018/03/09-15:44 [main] INFO  org.janusgraph.graphdb.configuration.GraphDatabaseConfiguration- Generated unique-instance-id=7f00000110138-zhzy1
+2018/03/09-15:44 [main] INFO  org.janusgraph.diskstorage.hbase.HBaseStoreManager- Copied host list from root.storage.hostname to hbase.zookeeper.quorum: 127.0.0.1
+2018/03/09-15:44 [main] INFO  org.apache.hadoop.hbase.zookeeper.RecoverableZooKeeper- Process identifier=hconnection-0x56786cf4 connecting to ZooKeeper ensemble=127.0.0.1:2181
+2018/03/09-15:44 [main] INFO  org.apache.zookeeper.ZooKeeper- Initiating client connection, connectString=127.0.0.1:2181 sessionTimeout=90000 watcher=hconnection-0x56786cf40x0, quorum=127.0.0.1:2181, baseZNode=/hbase
+2018/03/09-15:44 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2018/03/09-15:44 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Socket connection established to 127.0.0.1/127.0.0.1:2181, initiating session
+2018/03/09-15:44 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Session establishment complete on server 127.0.0.1/127.0.0.1:2181, sessionid = 0x16209b787700007, negotiated timeout = 40000
+2018/03/09-15:44 [main] INFO  org.janusgraph.diskstorage.Backend- Initiated backend operations thread pool of size 8
+2018/03/09-15:44 [main] INFO  org.janusgraph.graphdb.database.idassigner.VertexIDAssigner- Setting individual partition bounds: [[0,32)%32]
+2018/03/09-15:44 [main] INFO  org.janusgraph.graphdb.database.IndexSerializer- Hashing index keys
+2018/03/09-15:44 [main] INFO  org.janusgraph.diskstorage.log.kcvs.KCVSLog- Loaded unidentified ReadMarker start time 2018-03-09T07:44:17.117Z into org.janusgraph.diskstorage.log.kcvs.KCVSLog$MessagePuller@4ba24b53
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter- Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c98b23: startup date [Fri Mar 09 15:43:54 CST 2018]; root of context hierarchy
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Looking for request mappings in application context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c98b23: startup date [Fri Mar 09 15:43:54 CST 2018]; root of context hierarchy
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- 3 request handler methods found on class com.didichuxing.janusgraph.controller.testController: {public java.util.Map com.didichuxing.janusgraph.controller.testController.graph()={[/query],methods=[GET]}, public java.util.List com.didichuxing.janusgraph.controller.testController.insertName(com.didichuxing.janusgraph.domain.Api)={[/querynamep],methods=[POST]}, public java.util.List com.didichuxing.janusgraph.controller.testController.queryname(java.lang.String)={[/queryname/{name}],methods=[GET]}}
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/query],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.didichuxing.janusgraph.controller.testController.graph()
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/querynamep],methods=[POST]}" onto public java.util.List<java.lang.String> com.didichuxing.janusgraph.controller.testController.insertName(com.didichuxing.janusgraph.domain.Api)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/queryname/{name}],methods=[GET]}" onto public java.util.List<java.lang.String> com.didichuxing.janusgraph.controller.testController.queryname(java.lang.String)
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- 6 request handler methods found on class com.didichuxing.janusgraph.controller.JobController: {public boolean com.didichuxing.janusgraph.controller.JobController.isNodeEdgeExist(java.lang.String)={[/job/isJobEdgeExist/{nodeId}],methods=[GET]}, public boolean com.didichuxing.janusgraph.controller.JobController.updateNode(java.util.Map)={[/job/update],methods=[POST]}, public boolean com.didichuxing.janusgraph.controller.JobController.deleteAll()={[/job/deleteAll],methods=[DELETE]}, public boolean com.didichuxing.janusgraph.controller.JobController.insertJob(com.didichuxing.janusgraph.domain.Job)={[/job/insert],methods=[POST]}, public boolean com.didichuxing.janusgraph.controller.JobController.deleteJob(java.lang.String)={[/job/delete/{nodeId}],methods=[DELETE]}, public com.didichuxing.janusgraph.domain.Job com.didichuxing.janusgraph.controller.JobController.findJob(java.lang.String)={[/job/find/{nodeId}],methods=[GET]}}
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/job/isJobEdgeExist/{nodeId}],methods=[GET]}" onto public boolean com.didichuxing.janusgraph.controller.JobController.isNodeEdgeExist(java.lang.String)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/job/update],methods=[POST]}" onto public boolean com.didichuxing.janusgraph.controller.JobController.updateNode(java.util.Map)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/job/deleteAll],methods=[DELETE]}" onto public boolean com.didichuxing.janusgraph.controller.JobController.deleteAll()
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/job/insert],methods=[POST]}" onto public boolean com.didichuxing.janusgraph.controller.JobController.insertJob(com.didichuxing.janusgraph.domain.Job)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/job/delete/{nodeId}],methods=[DELETE]}" onto public boolean com.didichuxing.janusgraph.controller.JobController.deleteJob(java.lang.String)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/job/find/{nodeId}],methods=[GET]}" onto public com.didichuxing.janusgraph.domain.Job com.didichuxing.janusgraph.controller.JobController.findJob(java.lang.String)
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- 6 request handler methods found on class com.didichuxing.janusgraph.controller.ApiController: {public boolean com.didichuxing.janusgraph.controller.ApiController.isNodeEdgeExist(java.lang.String)={[/api/isApiEdgeExist/{nodeId}],methods=[GET]}, public boolean com.didichuxing.janusgraph.controller.ApiController.updateNode(java.util.Map)={[/api/update],methods=[POST]}, public boolean com.didichuxing.janusgraph.controller.ApiController.deleteAll()={[/api/deleteAll],methods=[DELETE]}, public boolean com.didichuxing.janusgraph.controller.ApiController.insertApi(com.didichuxing.janusgraph.domain.Api)={[/api/insert],methods=[POST]}, public com.didichuxing.janusgraph.domain.Api com.didichuxing.janusgraph.controller.ApiController.findApi(java.lang.String)={[/api/find/{nodeId}],methods=[GET]}, public boolean com.didichuxing.janusgraph.controller.ApiController.deleteApi(java.lang.String)={[/api/delete/{nodeId}],methods=[DELETE]}}
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/api/isApiEdgeExist/{nodeId}],methods=[GET]}" onto public boolean com.didichuxing.janusgraph.controller.ApiController.isNodeEdgeExist(java.lang.String)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/api/update],methods=[POST]}" onto public boolean com.didichuxing.janusgraph.controller.ApiController.updateNode(java.util.Map)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/api/deleteAll],methods=[DELETE]}" onto public boolean com.didichuxing.janusgraph.controller.ApiController.deleteAll()
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/api/insert],methods=[POST]}" onto public boolean com.didichuxing.janusgraph.controller.ApiController.insertApi(com.didichuxing.janusgraph.domain.Api)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/api/find/{nodeId}],methods=[GET]}" onto public com.didichuxing.janusgraph.domain.Api com.didichuxing.janusgraph.controller.ApiController.findApi(java.lang.String)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/api/delete/{nodeId}],methods=[DELETE]}" onto public boolean com.didichuxing.janusgraph.controller.ApiController.deleteApi(java.lang.String)
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- 14 request handler methods found on class com.didichuxing.janusgraph.controller.OLTPController: {public org.springframework.http.ResponseEntity com.didichuxing.janusgraph.controller.OLTPController.find(java.lang.String,java.lang.String)={[/{label}/find/{nodeId}],methods=[GET]}, public org.springframework.http.ResponseEntity com.didichuxing.janusgraph.controller.OLTPController.delete(java.lang.String,java.lang.String)={[/{label}/delete/{nodeId}],methods=[DELETE]}, public org.springframework.http.ResponseEntity com.didichuxing.janusgraph.controller.OLTPController.insert(java.lang.String,java.util.Map)={[/{label}/insert],methods=[POST]}, public org.springframework.http.ResponseEntity com.didichuxing.janusgraph.controller.OLTPController.isNodeEdgeExist(java.lang.String,java.lang.String)={[/{label}/isNodeEdgeExist/{nodeId}],methods=[GET]}, public org.springframework.http.ResponseEntity com.didichuxing.janusgraph.controller.OLTPController.isOutGoingEdgeExist(java.lang.String,java.lang.String)={[/{label}/isOutGoingEdgeExist/{nodeId}],methods=[GET]}, public org.springframework.http.ResponseEntity com.didichuxing.janusgraph.controller.OLTPController.deleteNodeEdge(java.lang.String,java.lang.String)={[/{label}/deleteNodeEdge/{nodeId}],methods=[DELETE]}, public org.springframework.http.ResponseEntity com.didichuxing.janusgraph.controller.OLTPController.deleteOutGoingEdge(java.lang.String,java.lang.String)={[/{label}/deleteOutGoingEdge/{nodeId}],methods=[DELETE]}, public org.springframework.http.ResponseEntity com.didichuxing.janusgraph.controller.OLTPController.deleteInComingEdge(java.lang.String,java.lang.String)={[/{label}/deleteInComingEdge/{nodeId}],methods=[DELETE]}, public org.springframework.http.ResponseEntity com.didichuxing.janusgraph.controller.OLTPController.updateNode(java.lang.String,java.util.Map)={[/{label}/update],methods=[POST]}, public org.springframework.http.ResponseEntity com.didichuxing.janusgraph.controller.OLTPController.deleteAll(java.lang.String)={[/{label}/deleteAll],methods=[DELETE]}, public org.springframework.http.ResponseEntity com.didichuxing.janusgraph.controller.OLTPController.isInComingEdgeExist(java.lang.String,java.lang.String)={[/{label}/isInComingEdgeExist/{nodeId}],methods=[GET]}, public org.springframework.http.ResponseEntity com.didichuxing.janusgraph.controller.OLTPController.findByProperty(java.lang.String,java.lang.String,java.lang.String)={[/{label}/findByProperty/{propertyKey}/{propertyValue}],methods=[GET]}, public org.springframework.http.ResponseEntity com.didichuxing.janusgraph.controller.OLTPController.findByProperties(java.lang.String,java.util.Map)={[/{label}/findByProperties],methods=[GET]}, public org.springframework.http.ResponseEntity com.didichuxing.janusgraph.controller.OLTPController.fuzzyFindByName(java.lang.String,java.lang.String)={[/{label}/fuzzyFindByName/{fuzzyString}],methods=[GET]}}
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/{label}/find/{nodeId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.didichuxing.janusgraph.domain.ClientInfo> com.didichuxing.janusgraph.controller.OLTPController.find(java.lang.String,java.lang.String)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/{label}/delete/{nodeId}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<com.didichuxing.janusgraph.domain.ClientInfo> com.didichuxing.janusgraph.controller.OLTPController.delete(java.lang.String,java.lang.String)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/{label}/insert],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.didichuxing.janusgraph.domain.ClientInfo> com.didichuxing.janusgraph.controller.OLTPController.insert(java.lang.String,java.util.Map<java.lang.String, java.lang.Object>)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/{label}/isNodeEdgeExist/{nodeId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.didichuxing.janusgraph.domain.ClientInfo> com.didichuxing.janusgraph.controller.OLTPController.isNodeEdgeExist(java.lang.String,java.lang.String)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/{label}/isOutGoingEdgeExist/{nodeId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.didichuxing.janusgraph.domain.ClientInfo> com.didichuxing.janusgraph.controller.OLTPController.isOutGoingEdgeExist(java.lang.String,java.lang.String)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/{label}/deleteNodeEdge/{nodeId}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<com.didichuxing.janusgraph.domain.ClientInfo> com.didichuxing.janusgraph.controller.OLTPController.deleteNodeEdge(java.lang.String,java.lang.String)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/{label}/deleteOutGoingEdge/{nodeId}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<com.didichuxing.janusgraph.domain.ClientInfo> com.didichuxing.janusgraph.controller.OLTPController.deleteOutGoingEdge(java.lang.String,java.lang.String)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/{label}/deleteInComingEdge/{nodeId}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<com.didichuxing.janusgraph.domain.ClientInfo> com.didichuxing.janusgraph.controller.OLTPController.deleteInComingEdge(java.lang.String,java.lang.String)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/{label}/update],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.didichuxing.janusgraph.domain.ClientInfo> com.didichuxing.janusgraph.controller.OLTPController.updateNode(java.lang.String,java.util.Map)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/{label}/deleteAll],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<com.didichuxing.janusgraph.domain.ClientInfo> com.didichuxing.janusgraph.controller.OLTPController.deleteAll(java.lang.String)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/{label}/isInComingEdgeExist/{nodeId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.didichuxing.janusgraph.domain.ClientInfo> com.didichuxing.janusgraph.controller.OLTPController.isInComingEdgeExist(java.lang.String,java.lang.String)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/{label}/findByProperty/{propertyKey}/{propertyValue}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.didichuxing.janusgraph.domain.ClientInfo> com.didichuxing.janusgraph.controller.OLTPController.findByProperty(java.lang.String,java.lang.String,java.lang.String)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/{label}/findByProperties],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.didichuxing.janusgraph.domain.ClientInfo> com.didichuxing.janusgraph.controller.OLTPController.findByProperties(java.lang.String,java.util.Map<java.lang.String, java.lang.Object>)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/{label}/fuzzyFindByName/{fuzzyString}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.didichuxing.janusgraph.domain.ClientInfo> com.didichuxing.janusgraph.controller.OLTPController.fuzzyFindByName(java.lang.String,java.lang.String)
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- 6 request handler methods found on class com.didichuxing.janusgraph.controller.DataSourceController: {public boolean com.didichuxing.janusgraph.controller.DataSourceController.isNodeEdgeExist(java.lang.String)={[/datasource/isDataSourceEdgeExist/{nodeId}],methods=[GET]}, public boolean com.didichuxing.janusgraph.controller.DataSourceController.updateNode(java.util.Map)={[/datasource/update],methods=[POST]}, public boolean com.didichuxing.janusgraph.controller.DataSourceController.deleteAll()={[/datasource/deleteAll],methods=[DELETE]}, public boolean com.didichuxing.janusgraph.controller.DataSourceController.insertDataSource(com.didichuxing.janusgraph.domain.DataSource)={[/datasource/insert],methods=[POST]}, public boolean com.didichuxing.janusgraph.controller.DataSourceController.deleteDataSource(java.lang.String)={[/datasource/delete/{nodeId}],methods=[DELETE]}, public com.didichuxing.janusgraph.domain.DataSource com.didichuxing.janusgraph.controller.DataSourceController.findDataSource(java.lang.String)={[/datasource/find/{nodeId}],methods=[GET]}}
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/datasource/isDataSourceEdgeExist/{nodeId}],methods=[GET]}" onto public boolean com.didichuxing.janusgraph.controller.DataSourceController.isNodeEdgeExist(java.lang.String)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/datasource/update],methods=[POST]}" onto public boolean com.didichuxing.janusgraph.controller.DataSourceController.updateNode(java.util.Map)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/datasource/deleteAll],methods=[DELETE]}" onto public boolean com.didichuxing.janusgraph.controller.DataSourceController.deleteAll()
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/datasource/insert],methods=[POST]}" onto public boolean com.didichuxing.janusgraph.controller.DataSourceController.insertDataSource(com.didichuxing.janusgraph.domain.DataSource)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/datasource/delete/{nodeId}],methods=[DELETE]}" onto public boolean com.didichuxing.janusgraph.controller.DataSourceController.deleteDataSource(java.lang.String)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/datasource/find/{nodeId}],methods=[GET]}" onto public com.didichuxing.janusgraph.domain.DataSource com.didichuxing.janusgraph.controller.DataSourceController.findDataSource(java.lang.String)
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- 2 request handler methods found on class com.didichuxing.janusgraph.controller.EdgeController: {public boolean com.didichuxing.janusgraph.controller.EdgeController.deleteEdge(java.util.Map)={[/edge/delete],methods=[DELETE]}, public boolean com.didichuxing.janusgraph.controller.EdgeController.insertEdge(java.util.Map)={[/edge/insert],methods=[POST]}}
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/edge/delete],methods=[DELETE]}" onto public boolean com.didichuxing.janusgraph.controller.EdgeController.deleteEdge(java.util.Map)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/edge/insert],methods=[POST]}" onto public boolean com.didichuxing.janusgraph.controller.EdgeController.insertEdge(java.util.Map)
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- 6 request handler methods found on class com.didichuxing.janusgraph.controller.CanalController: {public boolean com.didichuxing.janusgraph.controller.CanalController.isNodeEdgeExist(java.lang.String)={[/canal/isCanalEdgeExist/{nodeId}],methods=[GET]}, public boolean com.didichuxing.janusgraph.controller.CanalController.updateNode(java.util.Map)={[/canal/update],methods=[POST]}, public boolean com.didichuxing.janusgraph.controller.CanalController.deleteAll()={[/canal/deleteAll],methods=[DELETE]}, public boolean com.didichuxing.janusgraph.controller.CanalController.insertCanal(com.didichuxing.janusgraph.domain.Canal)={[/canal/insert],methods=[POST]}, public boolean com.didichuxing.janusgraph.controller.CanalController.deleteCanal(java.lang.String)={[/canal/delete/{nodeId}],methods=[DELETE]}, public com.didichuxing.janusgraph.domain.Canal com.didichuxing.janusgraph.controller.CanalController.findCanal(java.lang.String)={[/canal/find/{nodeId}],methods=[GET]}}
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/canal/isCanalEdgeExist/{nodeId}],methods=[GET]}" onto public boolean com.didichuxing.janusgraph.controller.CanalController.isNodeEdgeExist(java.lang.String)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/canal/update],methods=[POST]}" onto public boolean com.didichuxing.janusgraph.controller.CanalController.updateNode(java.util.Map)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/canal/deleteAll],methods=[DELETE]}" onto public boolean com.didichuxing.janusgraph.controller.CanalController.deleteAll()
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/canal/insert],methods=[POST]}" onto public boolean com.didichuxing.janusgraph.controller.CanalController.insertCanal(com.didichuxing.janusgraph.domain.Canal)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/canal/delete/{nodeId}],methods=[DELETE]}" onto public boolean com.didichuxing.janusgraph.controller.CanalController.deleteCanal(java.lang.String)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/canal/find/{nodeId}],methods=[GET]}" onto public com.didichuxing.janusgraph.domain.Canal com.didichuxing.janusgraph.controller.CanalController.findCanal(java.lang.String)
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- 6 request handler methods found on class com.didichuxing.janusgraph.controller.KafkaController: {public boolean com.didichuxing.janusgraph.controller.KafkaController.isNodeEdgeExist(java.lang.String)={[/kafka/isKafkaEdgeExist/{nodeId}],methods=[GET]}, public boolean com.didichuxing.janusgraph.controller.KafkaController.updateNode(java.util.Map)={[/kafka/update],methods=[POST]}, public boolean com.didichuxing.janusgraph.controller.KafkaController.deleteAll()={[/kafka/deleteAll],methods=[DELETE]}, public boolean com.didichuxing.janusgraph.controller.KafkaController.insertKafka(com.didichuxing.janusgraph.domain.Kafka)={[/kafka/insert],methods=[POST]}, public boolean com.didichuxing.janusgraph.controller.KafkaController.deleteKafka(java.lang.String)={[/kafka/delete/{nodeId}],methods=[DELETE]}, public com.didichuxing.janusgraph.domain.Kafka com.didichuxing.janusgraph.controller.KafkaController.findkafka(java.lang.String)={[/kafka/find/{nodeId}],methods=[GET]}}
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/kafka/isKafkaEdgeExist/{nodeId}],methods=[GET]}" onto public boolean com.didichuxing.janusgraph.controller.KafkaController.isNodeEdgeExist(java.lang.String)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/kafka/update],methods=[POST]}" onto public boolean com.didichuxing.janusgraph.controller.KafkaController.updateNode(java.util.Map)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/kafka/deleteAll],methods=[DELETE]}" onto public boolean com.didichuxing.janusgraph.controller.KafkaController.deleteAll()
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/kafka/insert],methods=[POST]}" onto public boolean com.didichuxing.janusgraph.controller.KafkaController.insertKafka(com.didichuxing.janusgraph.domain.Kafka)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/kafka/delete/{nodeId}],methods=[DELETE]}" onto public boolean com.didichuxing.janusgraph.controller.KafkaController.deleteKafka(java.lang.String)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/kafka/find/{nodeId}],methods=[GET]}" onto public com.didichuxing.janusgraph.domain.Kafka com.didichuxing.janusgraph.controller.KafkaController.findkafka(java.lang.String)
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- 7 request handler methods found on class com.didichuxing.janusgraph.controller.TravesalController: {public org.springframework.http.ResponseEntity com.didichuxing.janusgraph.controller.TravesalController.findAllNodes()={[/traversal/findAllNodes],methods=[GET]}, public org.springframework.http.ResponseEntity com.didichuxing.janusgraph.controller.TravesalController.findSubgraph(long,int)={[/traversal/findSubgraph/{id}/{depth}],methods=[GET]}, public org.springframework.http.ResponseEntity com.didichuxing.janusgraph.controller.TravesalController.findSubgraphByNodeId(java.util.Map)={[/traversal/findSubgraphByNodeId],methods=[POST]}, public org.springframework.http.ResponseEntity com.didichuxing.janusgraph.controller.TravesalController.findUpStreamById(long,int)={[/traversal/findUpStreamById/{id}/{depth}],methods=[GET]}, public org.springframework.http.ResponseEntity com.didichuxing.janusgraph.controller.TravesalController.findUpStreamByNodeId(java.util.Map)={[/traversal/findUpStreamByNodeId],methods=[POST]}, public org.springframework.http.ResponseEntity com.didichuxing.janusgraph.controller.TravesalController.findDownStreamById(long,int)={[/traversal/findDownStreamById/{id}/{depth}],methods=[GET]}, public org.springframework.http.ResponseEntity com.didichuxing.janusgraph.controller.TravesalController.findDownStreamByNodeId(java.util.Map)={[/traversal/findDownStreamByNodeId],methods=[POST]}}
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/traversal/findAllNodes],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.didichuxing.janusgraph.domain.ClientInfo> com.didichuxing.janusgraph.controller.TravesalController.findAllNodes()
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/traversal/findSubgraph/{id}/{depth}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.didichuxing.janusgraph.domain.ClientInfo> com.didichuxing.janusgraph.controller.TravesalController.findSubgraph(long,int)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/traversal/findSubgraphByNodeId],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.didichuxing.janusgraph.domain.ClientInfo> com.didichuxing.janusgraph.controller.TravesalController.findSubgraphByNodeId(java.util.Map<java.lang.String, java.lang.Object>)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/traversal/findUpStreamById/{id}/{depth}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.didichuxing.janusgraph.domain.ClientInfo> com.didichuxing.janusgraph.controller.TravesalController.findUpStreamById(long,int)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/traversal/findUpStreamByNodeId],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.didichuxing.janusgraph.domain.ClientInfo> com.didichuxing.janusgraph.controller.TravesalController.findUpStreamByNodeId(java.util.Map<java.lang.String, java.lang.Object>)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/traversal/findDownStreamById/{id}/{depth}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.didichuxing.janusgraph.domain.ClientInfo> com.didichuxing.janusgraph.controller.TravesalController.findDownStreamById(long,int)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/traversal/findDownStreamByNodeId],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.didichuxing.janusgraph.domain.ClientInfo> com.didichuxing.janusgraph.controller.TravesalController.findDownStreamByNodeId(java.util.Map<java.lang.String, java.lang.Object>)
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- 2 request handler methods found on class org.springframework.boot.autoconfigure.web.BasicErrorController: {public org.springframework.http.ResponseEntity org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)={[/error]}, public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)={[/error],produces=[text/html]}}
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter- Adding welcome page: class path resource [static/index.html]
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Looking for URL mappings in application context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c98b23: startup date [Fri Mar 09 15:43:54 CST 2018]; root of context hierarchy
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.context.annotation.internalRequiredAnnotationProcessor': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.context.annotation.internalCommonAnnotationProcessor': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.context.event.internalEventListenerProcessor': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.context.event.internalEventListenerFactory': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'springbootSdnApplication': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'kafkaDaoImpl': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'apiDaoImpl': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'jobDaoImpl': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'daoImpl': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'dataSourceDaoImpl': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'testDaoImpl': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'canalDaoImpl': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'testController': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'jobController': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'apiController': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'OLTPController': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'dataSourceController': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'edgeController': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'canalController': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'kafkaController': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'travesalController': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'traversalServiceImpl': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.scheduling.annotation.SchedulingConfiguration': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.context.annotation.internalScheduledAnnotationProcessor': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.AutoConfigurationPackages': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.PropertyPlaceholderAutoConfiguration': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'propertySourcesPlaceholderConfigurer': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.websocket.WebSocketAutoConfiguration$JettyWebSocketConfiguration': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'websocketContainerCustomizer': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.websocket.WebSocketAutoConfiguration': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration$EmbeddedJetty': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'jettyEmbeddedServletContainerFactory': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'embeddedServletContainerCustomizerBeanPostProcessor': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration$DispatcherServletConfiguration': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'dispatcherServlet': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'dispatcherServletRegistration': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'spring.mvc.CONFIGURATION_PROPERTIES': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor.store': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'error': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'beanNameViewResolver': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'errorAttributes': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'basicErrorController': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'errorPageCustomizer': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'preserveErrorControllerTargetClassPostProcessor': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$EnableWebMvcConfiguration': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'requestMappingHandlerAdapter': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'requestMappingHandlerMapping': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'mvcContentNegotiationManager': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'viewControllerHandlerMapping': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'beanNameHandlerMapping': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'resourceHandlerMapping': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'mvcResourceUrlProvider': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'defaultServletHandlerMapping': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'mvcConversionService': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'mvcValidator': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'mvcPathMatcher': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'mvcUrlPathHelper': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'mvcUriComponentsContributor': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'httpRequestHandlerAdapter': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'simpleControllerHandlerAdapter': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'handlerExceptionResolver': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'mvcViewResolver': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter$FaviconConfiguration': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'faviconHandlerMapping': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'faviconRequestHandler': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'defaultViewResolver': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'requestContextFilter': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'viewResolver': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'spring.resources.CONFIGURATION_PROPERTIES': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'hiddenHttpMethodFilter': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'httpPutFormContentFilter': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'mbeanExporter': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'objectNamingStrategy': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'mbeanServer': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'gson': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'jacksonObjectMapperBuilder': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'spring.jackson.CONFIGURATION_PROPERTIES': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'jacksonObjectMapper': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration$StringHttpMessageConverterConfiguration': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'stringHttpMessageConverter': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'spring.http.encoding.CONFIGURATION_PROPERTIES': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.web.JacksonHttpMessageConvertersConfiguration$MappingJackson2HttpMessageConverterConfiguration': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'mappingJackson2HttpMessageConverter': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.web.JacksonHttpMessageConvertersConfiguration': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.web.GsonHttpMessageConvertersConfiguration': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'messageConverters': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.groovy.template.GroovyTemplateAutoConfiguration$GroovyWebConfiguration': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'groovyMarkupViewResolver': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.groovy.template.GroovyTemplateAutoConfiguration$GroovyMarkupConfiguration': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'groovyMarkupConfigurer': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.groovy.template.GroovyTemplateAutoConfiguration': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'spring.groovy.template.CONFIGURATION_PROPERTIES': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.web.HttpEncodingAutoConfiguration': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'characterEncodingFilter': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.web.MultipartAutoConfiguration': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'multipartConfigElement': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'multipartResolver': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'multipart.CONFIGURATION_PROPERTIES': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.boot.autoconfigure.web.ServerPropertiesAutoConfiguration': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'serverProperties': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'duplicateServerPropertiesDetector': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'autoConfigurationReport': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'applicationEventMulticaster': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'springApplicationArguments': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'springBootLoggingSystem': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'environment': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'systemProperties': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'systemEnvironment': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'messageSource': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'servletContext': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'contextParameters': no URL paths identified
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping- Rejected bean name 'contextAttributes': no URL paths identified
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver- Looking for exception mappings: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c98b23: startup date [Fri Mar 09 15:43:54 CST 2018]; root of context hierarchy
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018/03/09-15:44 [main] WARN  org.springframework.boot.autoconfigure.groovy.template.GroovyTemplateAutoConfiguration- Cannot find template location: classpath:/templates/ (please add some templates, check your Groovy configuration, or set spring.groovy.template.check-template-location=false)
+2018/03/09-15:44 [main] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter- Registering beans for JMX exposure on startup
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.resource.ResourceUrlProvider- Looking for resource handler mappings
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.resource.ResourceUrlProvider- Found resource handler mapping: URL pattern="/**/favicon.ico", locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/], class path resource []], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@4a70d8c5]
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.resource.ResourceUrlProvider- Found resource handler mapping: URL pattern="/webjars/**", locations=[class path resource [META-INF/resources/webjars/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@61c6391f]
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.resource.ResourceUrlProvider- Found resource handler mapping: URL pattern="/**", locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@198a9f0c]
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.DispatcherServlet- Initializing servlet 'dispatcherServlet'
+2018/03/09-15:44 [main] INFO  application- Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.DispatcherServlet- FrameworkServlet 'dispatcherServlet': initialization started
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.DispatcherServlet- Using MultipartResolver [org.springframework.web.multipart.support.StandardServletMultipartResolver@7fd87eec]
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.DispatcherServlet- Unable to locate LocaleResolver with name 'localeResolver': using default [org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver@6cf4584a]
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.DispatcherServlet- Unable to locate ThemeResolver with name 'themeResolver': using default [org.springframework.web.servlet.theme.FixedThemeResolver@747e955]
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.DispatcherServlet- Unable to locate RequestToViewNameTranslator with name 'viewNameTranslator': using default [org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@52a8e6ce]
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.DispatcherServlet- Unable to locate FlashMapManager with name 'flashMapManager': using default [org.springframework.web.servlet.support.SessionFlashMapManager@206a2229]
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.DispatcherServlet- Published WebApplicationContext of servlet 'dispatcherServlet' as ServletContext attribute with name [org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet]
+2018/03/09-15:44 [main] INFO  org.springframework.web.servlet.DispatcherServlet- FrameworkServlet 'dispatcherServlet': initialization completed in 22 ms
+2018/03/09-15:44 [main] DEBUG org.springframework.web.servlet.DispatcherServlet- Servlet 'dispatcherServlet' configured successfully
+2018/03/09-15:44 [main] INFO  org.eclipse.jetty.server.ServerConnector- Started ServerConnector@6be84b12{HTTP/1.1}{0.0.0.0:8081}
+2018/03/09-15:44 [main] INFO  org.springframework.boot.context.embedded.jetty.JettyEmbeddedServletContainer- Jetty started on port(s) 8081 (http/1.1)
+2018/03/09-15:44 [main] DEBUG org.springframework.web.context.support.StandardServletEnvironment- Adding [server.ports] PropertySource with highest search precedence
+2018/03/09-15:44 [main] INFO  com.didichuxing.janusgraph.SpringbootSdnApplication- Started SpringbootSdnApplication in 25.377 seconds (JVM running for 32.565)
+2018/03/09-15:44 [qtp1449919835-16] DEBUG org.springframework.web.servlet.DispatcherServlet- DispatcherServlet with name 'dispatcherServlet' processing GET request for [/]
+2018/03/09-15:44 [qtp1449919835-16] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Looking up handler method for path /
+2018/03/09-15:44 [qtp1449919835-16] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Did not find handler method for [/]
+2018/03/09-15:44 [qtp1449919835-16] DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Mapping [/] to HandlerExecutionChain with handler [org.springframework.web.servlet.mvc.ParameterizableViewController@3fa1b659] and 1 interceptor
+2018/03/09-15:44 [qtp1449919835-16] DEBUG org.springframework.web.servlet.DispatcherServlet- Last-Modified value for [/] is: -1
+2018/03/09-15:44 [qtp1449919835-16] DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver- Requested media types are [text/html, application/xhtml+xml, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8] based on Accept header types and producible media types [*/*])
+2018/03/09-15:44 [qtp1449919835-16] DEBUG org.springframework.web.servlet.view.BeanNameViewResolver- No matching bean found for view name 'forward:index.html'
+2018/03/09-15:44 [qtp1449919835-16] DEBUG org.springframework.web.servlet.view.ContentNegotiatingViewResolver- Returning [org.springframework.web.servlet.view.InternalResourceView: unnamed; URL [index.html]] based on requested media type 'text/html'
+2018/03/09-15:44 [qtp1449919835-16] DEBUG org.springframework.web.servlet.DispatcherServlet- Rendering view [org.springframework.web.servlet.view.InternalResourceView: unnamed; URL [index.html]] in DispatcherServlet with name 'dispatcherServlet'
+2018/03/09-15:44 [qtp1449919835-16] DEBUG org.springframework.web.servlet.view.InternalResourceView- Forwarding to resource [index.html] in InternalResourceView 'null'
+2018/03/09-15:44 [qtp1449919835-16] DEBUG org.springframework.web.servlet.DispatcherServlet- DispatcherServlet with name 'dispatcherServlet' processing GET request for [/index.html]
+2018/03/09-15:44 [qtp1449919835-16] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Looking up handler method for path /index.html
+2018/03/09-15:44 [qtp1449919835-16] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Did not find handler method for [/index.html]
+2018/03/09-15:44 [qtp1449919835-16] DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Matching patterns for request [/index.html] are [/**]
+2018/03/09-15:44 [qtp1449919835-16] DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- URI Template variables for request [/index.html] are {}
+2018/03/09-15:44 [qtp1449919835-16] DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Mapping [/index.html] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@198a9f0c]]] and 1 interceptor
+2018/03/09-15:44 [qtp1449919835-16] DEBUG org.springframework.web.servlet.DispatcherServlet- Last-Modified value for [/index.html] is: -1
+2018/03/09-15:44 [qtp1449919835-16] DEBUG org.springframework.web.servlet.DispatcherServlet- Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2018/03/09-15:44 [qtp1449919835-16] DEBUG org.springframework.web.servlet.DispatcherServlet- Successfully completed request
+2018/03/09-15:44 [qtp1449919835-16] DEBUG org.springframework.web.servlet.DispatcherServlet- Successfully completed request
+2018/03/09-15:44 [qtp1449919835-17] DEBUG org.springframework.web.servlet.DispatcherServlet- DispatcherServlet with name 'dispatcherServlet' processing GET request for [/js/jquery.min.js]
+2018/03/09-15:44 [qtp1449919835-17] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Looking up handler method for path /js/jquery.min.js
+2018/03/09-15:44 [qtp1449919835-17] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Did not find handler method for [/js/jquery.min.js]
+2018/03/09-15:44 [qtp1449919835-17] DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Matching patterns for request [/js/jquery.min.js] are [/**]
+2018/03/09-15:44 [qtp1449919835-17] DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- URI Template variables for request [/js/jquery.min.js] are {}
+2018/03/09-15:44 [qtp1449919835-17] DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Mapping [/js/jquery.min.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@198a9f0c]]] and 1 interceptor
+2018/03/09-15:44 [qtp1449919835-17] DEBUG org.springframework.web.servlet.DispatcherServlet- Last-Modified value for [/js/jquery.min.js] is: -1
+2018/03/09-15:44 [qtp1449919835-17] DEBUG org.springframework.web.servlet.DispatcherServlet- Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2018/03/09-15:44 [qtp1449919835-17] DEBUG org.springframework.web.servlet.DispatcherServlet- Successfully completed request
+2018/03/09-15:44 [qtp1449919835-18] DEBUG org.springframework.web.servlet.DispatcherServlet- DispatcherServlet with name 'dispatcherServlet' processing GET request for [/js/echarts.js]
+2018/03/09-15:44 [qtp1449919835-18] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Looking up handler method for path /js/echarts.js
+2018/03/09-15:44 [qtp1449919835-18] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Did not find handler method for [/js/echarts.js]
+2018/03/09-15:44 [qtp1449919835-18] DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Matching patterns for request [/js/echarts.js] are [/**]
+2018/03/09-15:44 [qtp1449919835-19] DEBUG org.springframework.web.servlet.DispatcherServlet- DispatcherServlet with name 'dispatcherServlet' processing GET request for [/js/personRelationship.js]
+2018/03/09-15:44 [qtp1449919835-18] DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- URI Template variables for request [/js/echarts.js] are {}
+2018/03/09-15:44 [qtp1449919835-18] DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Mapping [/js/echarts.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@198a9f0c]]] and 1 interceptor
+2018/03/09-15:44 [qtp1449919835-18] DEBUG org.springframework.web.servlet.DispatcherServlet- Last-Modified value for [/js/echarts.js] is: -1
+2018/03/09-15:44 [qtp1449919835-19] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Looking up handler method for path /js/personRelationship.js
+2018/03/09-15:44 [qtp1449919835-19] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Did not find handler method for [/js/personRelationship.js]
+2018/03/09-15:44 [qtp1449919835-19] DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Matching patterns for request [/js/personRelationship.js] are [/**]
+2018/03/09-15:44 [qtp1449919835-19] DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- URI Template variables for request [/js/personRelationship.js] are {}
+2018/03/09-15:44 [qtp1449919835-19] DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Mapping [/js/personRelationship.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@198a9f0c]]] and 1 interceptor
+2018/03/09-15:44 [qtp1449919835-19] DEBUG org.springframework.web.servlet.DispatcherServlet- Last-Modified value for [/js/personRelationship.js] is: -1
+2018/03/09-15:44 [qtp1449919835-19] DEBUG org.springframework.web.servlet.DispatcherServlet- Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2018/03/09-15:44 [qtp1449919835-19] DEBUG org.springframework.web.servlet.DispatcherServlet- Successfully completed request
+2018/03/09-15:44 [qtp1449919835-18] DEBUG org.springframework.web.servlet.DispatcherServlet- Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2018/03/09-15:44 [qtp1449919835-18] DEBUG org.springframework.web.servlet.DispatcherServlet- Successfully completed request
+2018/03/09-15:44 [qtp1449919835-20] DEBUG org.springframework.web.servlet.DispatcherServlet- DispatcherServlet with name 'dispatcherServlet' processing GET request for [/query]
+2018/03/09-15:44 [qtp1449919835-20] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Looking up handler method for path /query
+2018/03/09-15:44 [qtp1449919835-20] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping- Returning handler method [public java.util.Map<java.lang.String, java.lang.Object> com.didichuxing.janusgraph.controller.testController.graph()]
+2018/03/09-15:44 [qtp1449919835-20] DEBUG org.springframework.web.servlet.DispatcherServlet- Last-Modified value for [/query] is: -1
+2018/03/09-15:44 [qtp1449919835-16] DEBUG org.springframework.web.servlet.DispatcherServlet- DispatcherServlet with name 'dispatcherServlet' processing GET request for [/favicon.ico]
+2018/03/09-15:44 [qtp1449919835-16] DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Matching patterns for request [/favicon.ico] are [/**/favicon.ico]
+2018/03/09-15:44 [qtp1449919835-16] DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- URI Template variables for request [/favicon.ico] are {}
+2018/03/09-15:44 [qtp1449919835-16] DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping- Mapping [/favicon.ico] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/], class path resource []], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@4a70d8c5]]] and 1 interceptor
+2018/03/09-15:44 [qtp1449919835-16] DEBUG org.springframework.web.servlet.DispatcherServlet- Last-Modified value for [/favicon.ico] is: -1
+2018/03/09-15:44 [qtp1449919835-16] DEBUG org.springframework.web.servlet.DispatcherServlet- Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2018/03/09-15:44 [qtp1449919835-16] DEBUG org.springframework.web.servlet.DispatcherServlet- Successfully completed request
+2018/03/09-15:44 [qtp1449919835-20] WARN  org.janusgraph.graphdb.transaction.StandardJanusGraphTx- Query requires iterating over all vertices [()]. For better performance, use indexes
+2018/03/09-15:44 [qtp1449919835-20] WARN  org.janusgraph.graphdb.transaction.StandardJanusGraphTx- Query requires iterating over all vertices [()]. For better performance, use indexes
+2018/03/09-15:44 [qtp1449919835-20] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor- Written [{nodes=[{name=3, value=6}, {name=5, value=6}, {name=7, value=6}, {name=2, value=6}, {name=8, value=6}, {name=6, value=6}, {name=1, value=6}, {name=4, value=6}], links=[{source=0, target=7}, {source=1, target=2}, {source=3, target=0}, {source=5, target=4}, {source=6, target=0}, {source=7, target=5}, {source=7, target=1}]}] as "application/json;charset=UTF-8" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@d7d8006]
+2018/03/09-15:44 [qtp1449919835-20] DEBUG org.springframework.web.servlet.DispatcherServlet- Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+2018/03/09-15:44 [qtp1449919835-20] DEBUG org.springframework.web.servlet.DispatcherServlet- Successfully completed request
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Unable to read additional data from server sessionid 0x16209b787700007, likely server has closed socket, closing socket connection and attempting reconnect
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] WARN  org.apache.zookeeper.ClientCnxn- Session 0x16209b787700007 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] WARN  org.apache.zookeeper.ClientCnxn- Session 0x16209b787700007 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] WARN  org.apache.zookeeper.ClientCnxn- Session 0x16209b787700007 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] WARN  org.apache.zookeeper.ClientCnxn- Session 0x16209b787700007 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] WARN  org.apache.zookeeper.ClientCnxn- Session 0x16209b787700007 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] WARN  org.apache.zookeeper.ClientCnxn- Session 0x16209b787700007 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] WARN  org.apache.zookeeper.ClientCnxn- Session 0x16209b787700007 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] WARN  org.apache.zookeeper.ClientCnxn- Session 0x16209b787700007 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] WARN  org.apache.zookeeper.ClientCnxn- Session 0x16209b787700007 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] WARN  org.apache.zookeeper.ClientCnxn- Session 0x16209b787700007 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] WARN  org.apache.zookeeper.ClientCnxn- Session 0x16209b787700007 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] WARN  org.apache.zookeeper.ClientCnxn- Session 0x16209b787700007 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] WARN  org.apache.zookeeper.ClientCnxn- Session 0x16209b787700007 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] WARN  org.apache.zookeeper.ClientCnxn- Session 0x16209b787700007 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] WARN  org.apache.zookeeper.ClientCnxn- Session 0x16209b787700007 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:361)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1081)
+2018/03/09-16:19 [pool-5-thread-1] ERROR org.apache.hadoop.hbase.zookeeper.RecoverableZooKeeper- ZooKeeper getData failed after 4 attempts
+2018/03/09-16:19 [pool-5-thread-1] WARN  org.apache.hadoop.hbase.zookeeper.ZKUtil- hconnection-0x56786cf4-0x16209b787700007, quorum=127.0.0.1:2181, baseZNode=/hbase Unable to get data of znode /hbase/table/janusgraph
+org.apache.zookeeper.KeeperException$ConnectionLossException: KeeperErrorCode = ConnectionLoss for /hbase/table/janusgraph
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:99)
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:51)
+	at org.apache.zookeeper.ZooKeeper.getData(ZooKeeper.java:1155)
+	at org.apache.hadoop.hbase.zookeeper.RecoverableZooKeeper.getData(RecoverableZooKeeper.java:354)
+	at org.apache.hadoop.hbase.zookeeper.ZKUtil.getData(ZKUtil.java:623)
+	at org.apache.hadoop.hbase.zookeeper.ZKTableStateClientSideReader.getTableState(ZKTableStateClientSideReader.java:185)
+	at org.apache.hadoop.hbase.zookeeper.ZKTableStateClientSideReader.isDisabledTable(ZKTableStateClientSideReader.java:59)
+	at org.apache.hadoop.hbase.client.ZooKeeperRegistry.isTableOnlineState(ZooKeeperRegistry.java:127)
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.isTableDisabled(ConnectionManager.java:979)
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.relocateRegion(ConnectionManager.java:1148)
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.relocateRegion(ConnectionManager.java:1136)
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.getRegionLocation(ConnectionManager.java:957)
+	at org.apache.hadoop.hbase.client.HRegionLocator.getRegionLocation(HRegionLocator.java:83)
+	at org.apache.hadoop.hbase.client.RegionServerCallable.prepare(RegionServerCallable.java:75)
+	at org.apache.hadoop.hbase.client.RpcRetryingCaller.callWithRetries(RpcRetryingCaller.java:134)
+	at org.apache.hadoop.hbase.client.HTable.get(HTable.java:865)
+	at org.apache.hadoop.hbase.client.HTable.get(HTable.java:831)
+	at org.apache.hadoop.hbase.client.HTable.get(HTable.java:885)
+	at org.janusgraph.diskstorage.hbase.HTable1_0.get(HTable1_0.java:45)
+	at org.janusgraph.diskstorage.hbase.HBaseKeyColumnValueStore.getHelper(HBaseKeyColumnValueStore.java:170)
+	at org.janusgraph.diskstorage.hbase.HBaseKeyColumnValueStore.getSlice(HBaseKeyColumnValueStore.java:90)
+	at org.janusgraph.diskstorage.log.kcvs.KCVSLog$MessagePuller$1.call(KCVSLog.java:783)
+	at org.janusgraph.diskstorage.log.kcvs.KCVSLog$MessagePuller$1.call(KCVSLog.java:780)
+	at org.janusgraph.diskstorage.util.BackendOperation.execute(BackendOperation.java:148)
+	at org.janusgraph.diskstorage.util.BackendOperation$1.call(BackendOperation.java:162)
+	at org.janusgraph.diskstorage.util.BackendOperation.executeDirect(BackendOperation.java:69)
+	at org.janusgraph.diskstorage.util.BackendOperation.execute(BackendOperation.java:55)
+	at org.janusgraph.diskstorage.util.BackendOperation.execute(BackendOperation.java:159)
+	at org.janusgraph.diskstorage.log.kcvs.KCVSLog$MessagePuller.run(KCVSLog.java:717)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018/03/09-16:19 [pool-5-thread-1] ERROR org.apache.hadoop.hbase.zookeeper.ZooKeeperWatcher- hconnection-0x56786cf4-0x16209b787700007, quorum=127.0.0.1:2181, baseZNode=/hbase Received unexpected KeeperException, re-throwing exception
+org.apache.zookeeper.KeeperException$ConnectionLossException: KeeperErrorCode = ConnectionLoss for /hbase/table/janusgraph
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:99)
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:51)
+	at org.apache.zookeeper.ZooKeeper.getData(ZooKeeper.java:1155)
+	at org.apache.hadoop.hbase.zookeeper.RecoverableZooKeeper.getData(RecoverableZooKeeper.java:354)
+	at org.apache.hadoop.hbase.zookeeper.ZKUtil.getData(ZKUtil.java:623)
+	at org.apache.hadoop.hbase.zookeeper.ZKTableStateClientSideReader.getTableState(ZKTableStateClientSideReader.java:185)
+	at org.apache.hadoop.hbase.zookeeper.ZKTableStateClientSideReader.isDisabledTable(ZKTableStateClientSideReader.java:59)
+	at org.apache.hadoop.hbase.client.ZooKeeperRegistry.isTableOnlineState(ZooKeeperRegistry.java:127)
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.isTableDisabled(ConnectionManager.java:979)
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.relocateRegion(ConnectionManager.java:1148)
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.relocateRegion(ConnectionManager.java:1136)
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.getRegionLocation(ConnectionManager.java:957)
+	at org.apache.hadoop.hbase.client.HRegionLocator.getRegionLocation(HRegionLocator.java:83)
+	at org.apache.hadoop.hbase.client.RegionServerCallable.prepare(RegionServerCallable.java:75)
+	at org.apache.hadoop.hbase.client.RpcRetryingCaller.callWithRetries(RpcRetryingCaller.java:134)
+	at org.apache.hadoop.hbase.client.HTable.get(HTable.java:865)
+	at org.apache.hadoop.hbase.client.HTable.get(HTable.java:831)
+	at org.apache.hadoop.hbase.client.HTable.get(HTable.java:885)
+	at org.janusgraph.diskstorage.hbase.HTable1_0.get(HTable1_0.java:45)
+	at org.janusgraph.diskstorage.hbase.HBaseKeyColumnValueStore.getHelper(HBaseKeyColumnValueStore.java:170)
+	at org.janusgraph.diskstorage.hbase.HBaseKeyColumnValueStore.getSlice(HBaseKeyColumnValueStore.java:90)
+	at org.janusgraph.diskstorage.log.kcvs.KCVSLog$MessagePuller$1.call(KCVSLog.java:783)
+	at org.janusgraph.diskstorage.log.kcvs.KCVSLog$MessagePuller$1.call(KCVSLog.java:780)
+	at org.janusgraph.diskstorage.util.BackendOperation.execute(BackendOperation.java:148)
+	at org.janusgraph.diskstorage.util.BackendOperation$1.call(BackendOperation.java:162)
+	at org.janusgraph.diskstorage.util.BackendOperation.executeDirect(BackendOperation.java:69)
+	at org.janusgraph.diskstorage.util.BackendOperation.execute(BackendOperation.java:55)
+	at org.janusgraph.diskstorage.util.BackendOperation.execute(BackendOperation.java:159)
+	at org.janusgraph.diskstorage.log.kcvs.KCVSLog$MessagePuller.run(KCVSLog.java:717)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Socket connection established to 127.0.0.1/127.0.0.1:2181, initiating session
+2018/03/09-16:19 [main-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Unable to reconnect to ZooKeeper service, session 0x16209b787700007 has expired, closing socket connection
+2018/03/09-16:19 [main-EventThread] WARN  org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation- This client just lost it's session with ZooKeeper, closing it. It will be recreated next time someone needs it
+org.apache.zookeeper.KeeperException$SessionExpiredException: KeeperErrorCode = Session expired
+	at org.apache.hadoop.hbase.zookeeper.ZooKeeperWatcher.connectionEvent(ZooKeeperWatcher.java:702)
+	at org.apache.hadoop.hbase.zookeeper.ZooKeeperWatcher.process(ZooKeeperWatcher.java:613)
+	at org.apache.zookeeper.ClientCnxn$EventThread.processEvent(ClientCnxn.java:522)
+	at org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:498)
+2018/03/09-16:19 [main-EventThread] INFO  org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation- Closing zookeeper sessionid=0x16209b787700007
+2018/03/09-16:19 [main-EventThread] INFO  org.apache.zookeeper.ClientCnxn- EventThread shut down
+2018/03/09-16:19 [pool-5-thread-1] WARN  org.apache.hadoop.hbase.zookeeper.ZKUtil- hconnection-0x56786cf4-0x16209b787700007, quorum=127.0.0.1:2181, baseZNode=/hbase Unable to get data of znode /hbase/table/janusgraph
+org.apache.zookeeper.KeeperException$SessionExpiredException: KeeperErrorCode = Session expired for /hbase/table/janusgraph
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:127)
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:51)
+	at org.apache.zookeeper.ZooKeeper.getData(ZooKeeper.java:1155)
+	at org.apache.hadoop.hbase.zookeeper.RecoverableZooKeeper.getData(RecoverableZooKeeper.java:354)
+	at org.apache.hadoop.hbase.zookeeper.ZKUtil.getData(ZKUtil.java:623)
+	at org.apache.hadoop.hbase.zookeeper.ZKTableStateClientSideReader.getTableState(ZKTableStateClientSideReader.java:185)
+	at org.apache.hadoop.hbase.zookeeper.ZKTableStateClientSideReader.isDisabledTable(ZKTableStateClientSideReader.java:59)
+	at org.apache.hadoop.hbase.client.ZooKeeperRegistry.isTableOnlineState(ZooKeeperRegistry.java:127)
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.isTableDisabled(ConnectionManager.java:979)
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.relocateRegion(ConnectionManager.java:1148)
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.relocateRegion(ConnectionManager.java:1136)
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.getRegionLocation(ConnectionManager.java:957)
+	at org.apache.hadoop.hbase.client.HRegionLocator.getRegionLocation(HRegionLocator.java:83)
+	at org.apache.hadoop.hbase.client.RegionServerCallable.prepare(RegionServerCallable.java:75)
+	at org.apache.hadoop.hbase.client.RpcRetryingCaller.callWithRetries(RpcRetryingCaller.java:134)
+	at org.apache.hadoop.hbase.client.HTable.get(HTable.java:865)
+	at org.apache.hadoop.hbase.client.HTable.get(HTable.java:831)
+	at org.apache.hadoop.hbase.client.HTable.get(HTable.java:885)
+	at org.janusgraph.diskstorage.hbase.HTable1_0.get(HTable1_0.java:45)
+	at org.janusgraph.diskstorage.hbase.HBaseKeyColumnValueStore.getHelper(HBaseKeyColumnValueStore.java:170)
+	at org.janusgraph.diskstorage.hbase.HBaseKeyColumnValueStore.getSlice(HBaseKeyColumnValueStore.java:90)
+	at org.janusgraph.diskstorage.log.kcvs.KCVSLog$MessagePuller$1.call(KCVSLog.java:783)
+	at org.janusgraph.diskstorage.log.kcvs.KCVSLog$MessagePuller$1.call(KCVSLog.java:780)
+	at org.janusgraph.diskstorage.util.BackendOperation.execute(BackendOperation.java:148)
+	at org.janusgraph.diskstorage.util.BackendOperation$1.call(BackendOperation.java:162)
+	at org.janusgraph.diskstorage.util.BackendOperation.executeDirect(BackendOperation.java:69)
+	at org.janusgraph.diskstorage.util.BackendOperation.execute(BackendOperation.java:55)
+	at org.janusgraph.diskstorage.util.BackendOperation.execute(BackendOperation.java:159)
+	at org.janusgraph.diskstorage.log.kcvs.KCVSLog$MessagePuller.run(KCVSLog.java:717)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018/03/09-16:19 [pool-5-thread-1] ERROR org.apache.hadoop.hbase.zookeeper.ZooKeeperWatcher- hconnection-0x56786cf4-0x16209b787700007, quorum=127.0.0.1:2181, baseZNode=/hbase Received unexpected KeeperException, re-throwing exception
+org.apache.zookeeper.KeeperException$SessionExpiredException: KeeperErrorCode = Session expired for /hbase/table/janusgraph
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:127)
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:51)
+	at org.apache.zookeeper.ZooKeeper.getData(ZooKeeper.java:1155)
+	at org.apache.hadoop.hbase.zookeeper.RecoverableZooKeeper.getData(RecoverableZooKeeper.java:354)
+	at org.apache.hadoop.hbase.zookeeper.ZKUtil.getData(ZKUtil.java:623)
+	at org.apache.hadoop.hbase.zookeeper.ZKTableStateClientSideReader.getTableState(ZKTableStateClientSideReader.java:185)
+	at org.apache.hadoop.hbase.zookeeper.ZKTableStateClientSideReader.isDisabledTable(ZKTableStateClientSideReader.java:59)
+	at org.apache.hadoop.hbase.client.ZooKeeperRegistry.isTableOnlineState(ZooKeeperRegistry.java:127)
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.isTableDisabled(ConnectionManager.java:979)
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.relocateRegion(ConnectionManager.java:1148)
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.relocateRegion(ConnectionManager.java:1136)
+	at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.getRegionLocation(ConnectionManager.java:957)
+	at org.apache.hadoop.hbase.client.HRegionLocator.getRegionLocation(HRegionLocator.java:83)
+	at org.apache.hadoop.hbase.client.RegionServerCallable.prepare(RegionServerCallable.java:75)
+	at org.apache.hadoop.hbase.client.RpcRetryingCaller.callWithRetries(RpcRetryingCaller.java:134)
+	at org.apache.hadoop.hbase.client.HTable.get(HTable.java:865)
+	at org.apache.hadoop.hbase.client.HTable.get(HTable.java:831)
+	at org.apache.hadoop.hbase.client.HTable.get(HTable.java:885)
+	at org.janusgraph.diskstorage.hbase.HTable1_0.get(HTable1_0.java:45)
+	at org.janusgraph.diskstorage.hbase.HBaseKeyColumnValueStore.getHelper(HBaseKeyColumnValueStore.java:170)
+	at org.janusgraph.diskstorage.hbase.HBaseKeyColumnValueStore.getSlice(HBaseKeyColumnValueStore.java:90)
+	at org.janusgraph.diskstorage.log.kcvs.KCVSLog$MessagePuller$1.call(KCVSLog.java:783)
+	at org.janusgraph.diskstorage.log.kcvs.KCVSLog$MessagePuller$1.call(KCVSLog.java:780)
+	at org.janusgraph.diskstorage.util.BackendOperation.execute(BackendOperation.java:148)
+	at org.janusgraph.diskstorage.util.BackendOperation$1.call(BackendOperation.java:162)
+	at org.janusgraph.diskstorage.util.BackendOperation.executeDirect(BackendOperation.java:69)
+	at org.janusgraph.diskstorage.util.BackendOperation.execute(BackendOperation.java:55)
+	at org.janusgraph.diskstorage.util.BackendOperation.execute(BackendOperation.java:159)
+	at org.janusgraph.diskstorage.log.kcvs.KCVSLog$MessagePuller.run(KCVSLog.java:717)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018/03/09-16:19 [pool-5-thread-1] INFO  org.apache.hadoop.hbase.zookeeper.RecoverableZooKeeper- Process identifier=hconnection-0x56786cf4 connecting to ZooKeeper ensemble=127.0.0.1:2181
+2018/03/09-16:19 [pool-5-thread-1] INFO  org.apache.zookeeper.ZooKeeper- Initiating client connection, connectString=127.0.0.1:2181 sessionTimeout=90000 watcher=hconnection-0x56786cf40x0, quorum=127.0.0.1:2181, baseZNode=/hbase
+2018/03/09-16:19 [pool-5-thread-1-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Opening socket connection to server 127.0.0.1/127.0.0.1:2181. Will not attempt to authenticate using SASL (unknown error)
+2018/03/09-16:19 [pool-5-thread-1-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Socket connection established to 127.0.0.1/127.0.0.1:2181, initiating session
+2018/03/09-16:19 [pool-5-thread-1-SendThread(127.0.0.1:2181)] INFO  org.apache.zookeeper.ClientCnxn- Session establishment complete on server 127.0.0.1/127.0.0.1:2181, sessionid = 0x16209d7e0600006, negotiated timeout = 40000
+2018/03/09-17:03 [Thread-24] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext- Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c98b23: startup date [Fri Mar 09 15:43:54 CST 2018]; root of context hierarchy
+2018/03/09-17:03 [Thread-24] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter- Unregistering JMX-exposed beans on shutdown
+2018/03/09-17:03 [Thread-24] INFO  org.eclipse.jetty.server.ServerConnector- Stopped ServerConnector@6be84b12{HTTP/1.1}{0.0.0.0:8081}
+2018/03/09-17:03 [Thread-24] INFO  application- Destroying Spring FrameworkServlet 'dispatcherServlet'
+2018/03/09-17:03 [Thread-24] INFO  org.eclipse.jetty.server.handler.ContextHandler- Stopped o.s.b.c.e.j.JettyEmbeddedWebAppContext@3c17c711{/,file:/private/var/folders/zw/5v288pg55d50jjnqnql0v8b40000gn/T/jetty-docbase.5485613246909816534.8081/,UNAVAILABLE}
+2018/03/09-17:03 [SIGHUP handler] INFO  org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation- Closing master protocol: MasterService
+2018/03/09-17:03 [SIGHUP handler] INFO  org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation- Closing zookeeper sessionid=0x16209d7e0600006
+2018/03/09-17:03 [SIGHUP handler] INFO  org.apache.zookeeper.ZooKeeper- Session: 0x16209d7e0600006 closed
+2018/03/09-17:03 [pool-5-thread-1-EventThread] INFO  org.apache.zookeeper.ClientCnxn- EventThread shut down
